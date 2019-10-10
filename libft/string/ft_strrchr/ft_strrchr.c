@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_strrchr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 10:25:08 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 11:49:48 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *string)
+char			*ft_strrchr(const char *s, int c)
 {
-	size_t lenght;
+	char	*str;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	str = (char *)s;
+	str += ft_strlen(s);
+	while (s <= str)
+	{
+		if (*str == (char)c)
+			return (str);
+		str--;
+	}
+	return (NULL);
 }

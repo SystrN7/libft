@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_memcpy.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 14:58:04 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/08 15:10:33 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *string)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t lenght;
+	size_t	i;
+	char	*dest_bytes;
+	char	*src_bytes;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	i = 0;
+	dest_bytes = (char *)dst;
+	src_bytes = (char *)src;
+	while (i < n)
+	{
+		dest_bytes[i] = src_bytes[i];
+		i++;
+	}
+	return (dst);
 }

@@ -1,0 +1,6 @@
+
+ a	b	c	d	e	f	g
+ ^-str1		^-str2
+
+ str1 => str2 =(Copy in order) FAIL
+ str1

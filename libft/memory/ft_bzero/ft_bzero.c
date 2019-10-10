@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_bzero.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 12:08:43 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 09:13:51 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *string)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t lenght;
+	char	*bytes_string;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	bytes_string = (char *)s;
+	while (n-- > 0)
+		bytes_string[n] = 0;
 }

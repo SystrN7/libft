@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_strdup.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 16:39:07 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 17:09:32 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *string)
+char	*ft_strdup(const char *s1)
 {
-	size_t lenght;
+	void		*str_clone;
+	size_t		str_lenght;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	str_lenght = ft_strlen(s1);
+	if (!(str_clone = malloc(str_lenght + 1)))
+		return (NULL);
+	ft_strlcpy(str_clone, s1, str_lenght + 1);
+	return (str_clone);
 }

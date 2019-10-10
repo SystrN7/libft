@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_isalnum.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/08 09:36:56 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/08 09:39:55 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *string)
+int	ft_isalnum(int c)
 {
-	size_t lenght;
-
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	if (('a' <= c && 'z' >= c) ||
+		('A' <= c && 'Z' >= c) ||
+		('0' <= c && '9' >= c))
+		return (1);
+	return (0);
 }

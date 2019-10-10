@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_memcmp.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 09:51:09 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 12:09:32 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t	ft_strlen(const char *string)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t lenght;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		else
+			i++;
+			
+	return (0);
 }

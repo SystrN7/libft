@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlen.c                                      .::    .:/ .      .::   */
+/*   ft_calloc.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/07 16:38:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/07 16:45:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/09 16:23:04 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/09 16:43:42 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *string)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t lenght;
+	void	*addr;
 
-	lenght = 0;
-	while (string[lenght])
-		lenght++;
-	return (lenght);
+	if (!(addr = malloc(count * size)))
+		return (NULL);
+	ft_bzero(addr, count * size);
+	return (addr);
 }
