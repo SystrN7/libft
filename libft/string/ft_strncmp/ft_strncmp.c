@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 12:04:02 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/09 12:10:09 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 11:53:40 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -27,6 +27,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (str1[i] - str2[i]);
 		else
 			i++;
-			
 	return (0);
 }

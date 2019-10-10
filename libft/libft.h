@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 10:55:31 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/10 17:24:36 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,7 +45,7 @@
 
 	char	*ft_strchr(const char *s, int c);
 	char	*ft_strrchr(const char *s, int c);
-	char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 	char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 	int		ft_strncmp(const char *s1, const char *s2, size_t n);
 	
@@ -54,8 +54,13 @@
 	
 	char	*ft_strdup(const char *s1);
 	char	*ft_strjoin(char const *s1, char const *s2);
-
+	char	*ft_substr(char const *s, unsigned int start, size_t len);
+	char	*ft_strtrim(char const *s1, char const *set);
+	char	**ft_split(char const *s, char c);
 
 	int		ft_atoi(const char *str);
+	char	*ft_itoa(int n);
+
+	char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

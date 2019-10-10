@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_strlcpy.c                                     .::    .:/ .      .::   */
+/*   ft_itoa.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/09 12:49:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 11:54:10 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/10 16:18:06 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/10 17:19:12 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_itoa(int n)
 {
-	size_t	i;
+	char	*str;
+	int		digits;
+	int		is_negative;
+	long	number;
 
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (i < (size - 1) && src[i])
+	digits = (n < 0) ? 2 : 1;
+	is_negative = (n < 0) ? 1 : 0;
+	number = n;
+	number *= (n < 0) ? -1 : 1;
+	while (n /= 10)
+		digits++;
+	if (!(str = malloc((digits + 1) * sizeof(char))))
+		return (NULL);
+	str[digits] = '\0';
+	while (digits)
 	{
-		dst[i] = src[i];
-		i++;
+		str[--digits] = (number % 10) + '0';
+		number /= 10;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	if (is_negative)
+		str[0] = '-';
+	return (str);
 }
