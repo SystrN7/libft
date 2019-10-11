@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 17:24:36 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/11 10:02:11 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,9 +16,8 @@
 #ifndef FT_LIB_H
 # define FT_LIB_H
 
-	#include <stdlib.h>
-	//#define NULL 0
-	//typedef unsigned long size_t;
+# include <stdlib.h>
+# include <unistd.h>
 
 
 
@@ -62,5 +61,13 @@
 	char	*ft_itoa(int n);
 
 	char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+
+	void	ft_putchar_fd(char c, int fd);
+	void	ft_putstr_fd(char *s, int fd);
+	void	ft_putendl_fd(char *s, int fd);
+	void	ft_putnbr_fd(int n, int fd);
+
+	
 
 #endif

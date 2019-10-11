@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_memcmp.c                                      .::    .:/ .      .::   */
+/*   ft_putnbr_fd.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/09 09:51:09 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 10:04:53 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/10/11 09:30:31 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/10/11 09:58:42 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+	char c;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		else
-			i++;
-	return (0);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	c = (n % 10) + '0';
+	n /= 10;
+	if (n > 0)
+		ft_putnbr_fd(n, fd);
+	write(fd, &c, 1);
 }
