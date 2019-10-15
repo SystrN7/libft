@@ -3,10 +3,10 @@
 #                                                               /              #
 #    Makefile                                         .::    .:/ .      .::    #
 #                                                  +:+:+   +:    +:  +:+:+     #
-#    By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+      #
+#    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/10/07 15:47:50 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/10/15 13:04:50 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -79,7 +79,7 @@ $(NAME): ${LIB_OBJS}
 bonus: ${LIB_OBJS} ${BONUS_OBJS}
 	ar rcs ${NAME} ${LIB_OBJS} ${BONUS_OBJS}
 
-.c.o:
+.c.o: ${HEADS}
 	${CC} ${CFLAGS} -c $< -I ${HEADS} -o ${<:.c=.o}
 
 clean:

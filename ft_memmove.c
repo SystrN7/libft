@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 09:10:51 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/15 11:04:58 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/15 14:56:04 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,14 +25,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	dest_bytes = (char *)dst;
 	src_bytes = (char *)src;
 	if (dst < src)
-		while (i++ < len)
-			*dest_bytes++ = *src_bytes++;
+		ft_memcpy(dest_bytes, src_bytes, len);
 	else
 	{
-		dest_bytes = dest_bytes + (len - 1);
-		src_bytes = src_bytes + (len - 1);
-		while (i++ <= len)
-			*dest_bytes-- = *src_bytes--;
+		i = len;
+		while (i-- != 0)
+			dest_bytes[i] = src_bytes[i];
 	}
 	return (dst);
 }
