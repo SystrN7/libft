@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 11:34:17 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 12:15:36 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/15 11:47:08 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,20 +28,22 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char			*stop;
 	char			*str;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
-	start = (char *)s1;
-	stop = (char *)s1;
-	while (*stop)
-		stop++;
-	while (ft_is_in_charset(*start, set))
-		start++;
-	stop--;
-	while (ft_is_in_charset(*stop, set))
+	size = 0;
+	if (s1 != NULL && set != NULL)
+	{
+		start = (char *)s1;
+		stop = (char *)s1;
+		while (*stop)
+			stop++;
 		stop--;
-	size = (stop - start > 0) ? stop - start : 0;
-	if (!(str = malloc((size + 1 * sizeof(char)))))
+		while (ft_is_in_charset(*start, set))
+			start++;
+		while (ft_is_in_charset(*stop, set))
+			stop--;
+		size = (stop - start > 0) ? stop - start : 0;
+	}
+	if (!(str = malloc(((size + 1) * sizeof(char)))))
 		return (NULL);
-	ft_strlcpy(str, start, (stop - start) + 2);
+	ft_strlcpy(str, start, size + 2);
 	return (str);
 }

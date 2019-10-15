@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 09:59:21 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 11:52:35 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/15 09:58:38 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,7 +20,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	str2_lenght;
 
 	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	{
+		str1_lenght = 0;
+		str2_lenght = 0;
+	}
 	str1_lenght = ft_strlen(s1);
 	str2_lenght = ft_strlen(s2);
 	if (!(str = ft_calloc(str1_lenght + str2_lenght + 1, sizeof(char))))
