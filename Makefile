@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/10/15 13:04:50 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/10/16 14:46:34 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -44,7 +44,8 @@ LIB_SRCS	=	ft_calloc.c \
 				ft_putchar_fd.c \
 				ft_putstr_fd.c \
 				ft_putendl_fd.c \
-				ft_putnbr_fd.c
+				ft_putnbr_fd.c \
+				ft_atoi.c
 
 BONUS_SRCS	=	ft_lstnew_bonus.c \
 				ft_lstadd_front_bonus.c \
@@ -58,9 +59,9 @@ BONUS_SRCS	=	ft_lstnew_bonus.c \
 
 
 
-HEADS			= .
+HEADS		= libft.h
 
-NAME	=	libft.a
+NAME		= libft.a
 
 
 # Workings vars
@@ -73,20 +74,20 @@ BONUS_OBJS	=	${BONUS_SRCS:.c=.o}
 
 all:	$(NAME)
 
-$(NAME): ${LIB_OBJS}
-	ar rcs ${NAME} ${LIB_OBJS}
+$(NAME): $(LIB_OBJS) $(HEADS)
+	ar rcs $(NAME) $(LIB_OBJS)
 
-bonus: ${LIB_OBJS} ${BONUS_OBJS}
-	ar rcs ${NAME} ${LIB_OBJS} ${BONUS_OBJS}
+bonus: $(LIB_OBJS) $(BONUS_OBJS) $(HEADS)
+	ar rcs $(NAME) $(LIB_OBJS) $(BONUS_OBJS)
 
-.c.o: ${HEADS}
-	${CC} ${CFLAGS} -c $< -I ${HEADS} -o ${<:.c=.o}
+%.o: %.c $(HEADS)
+	gcc $(CFLAGS) -c $< -o $@
 
 clean:
-	${RM} ${LIB_OBJS} ${BONUS_OBJS}
+	$(RM) $(LIB_OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re:		fclean all
 
