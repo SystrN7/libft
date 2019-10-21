@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 14:35:53 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 08:43:06 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/21 14:03:05 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,12 +18,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t i;
 	size_t char_match;
 
-	if (haystack == NULL || needle == NULL)
+	if (haystack == NULL)
 		return (NULL);
+	if (needle == NULL && needle[0] == '\0')
+		return ((char *)haystack);
 	i = 0;
 	char_match = 0;
-	if (needle[0] == '\0')
-		return ((char *)haystack);
 	while (i < len && haystack[i])
 	{
 		if (haystack[i] == needle[char_match])

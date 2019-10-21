@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_memset.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 10:52:19 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 13:40:09 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/21 13:02:38 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,6 +21,6 @@ void	*ft_memset(void *b, int c, size_t lenght)
 		return (NULL);
 	bytes_string = (unsigned char *)b;
 	while (lenght-- > 0)
-		*bytes_string++ = c;
+		*bytes_string++ = (unsigned char)c;
 	return (b);
 }

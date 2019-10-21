@@ -6,28 +6,28 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 09:19:02 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 10:04:31 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/21 13:50:21 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	unsigned char	*bytes_string;
-	unsigned char	needle;
+	unsigned char	*byte_str;
 	size_t			i;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	bytes_string = (unsigned char *)s;
-	needle = (unsigned char)c;
+	byte_str = (unsigned char *)str;
+	if ((unsigned char)c == 0 && n > ft_strlen((char *)byte_str))
+		return (byte_str + ft_strlen((char *)byte_str));
+	if ((unsigned char)c == 0)
+		return (NULL);
 	while (i < n)
 	{
-		if (*(bytes_string + i) == needle)
-			return (bytes_string + i);
+		if (byte_str[i] == (unsigned char)c)
+			return ((void *)str + i);
 		i++;
 	}
 	return (NULL);

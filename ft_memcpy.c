@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_memcpy.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <marvin@le-101.fr>                 +:+   +:    +:    +:+     */
+/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 14:58:04 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/08 15:10:33 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/21 13:08:38 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*dest_bytes;
 	char	*src_bytes;
 
-	if (dst == NULL || src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
 	i = 0;
 	dest_bytes = (char *)dst;
