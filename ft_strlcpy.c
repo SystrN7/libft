@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 12:49:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/21 14:02:40 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/22 10:45:30 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		return (0);
 	if (size == 0)
 		return (ft_strlen(src));
-	while (i < (size - 1) && (src != NULL && src[i]))
+	while (i < (size - 1) && src[i])
 	{
 		dst[i] = src[i];
 		i++;
