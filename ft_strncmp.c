@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 12:04:02 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/21 13:35:40 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 09:02:24 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -25,9 +25,10 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	if (s1 == NULL || s2 == NULL)
 		return (0);
 	while (((str1[i] != '\0' || str2[i] != '\0')) && i < n)
+	{
 		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		else
-			i++;
+			return (str1[i] - str2[i]);
+		i++;
+	}
 	return (0);
 }
