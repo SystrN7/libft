@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 13:44:29 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/22 10:21:51 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 12:11:59 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,8 @@ static size_t	ft_strnlen(const char *string, size_t size)
 	size_t length;
 
 	length = 0;
+	if (string == NULL)
+		return (0);
 	while (string[length] && length < size)
 		length++;
 	return (length);
