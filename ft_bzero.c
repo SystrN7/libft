@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/08 12:08:43 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 09:46:23 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:14:24 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,7 +15,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (s == NULL)
-		return ;
 	ft_memset(s, 0, n);
 }

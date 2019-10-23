@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 13:44:29 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 12:11:59 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 15:11:45 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -31,14 +31,12 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dest_lenght;
 	size_t	src_lenght;
 
-	if (dst == NULL)
-		return (0);
 	i = 0;
 	dest_lenght = ft_strnlen(dst, size);
 	src_lenght = ft_strlen(src);
-	if (size <= dest_lenght)
+	if (size == dest_lenght)
 		return (src_lenght + size);
-	while (i < (size - (1 + dest_lenght)) && (src != NULL && src[i]))
+	while (i < (size - (1 + dest_lenght)) && src[i])
 	{
 		dst[dest_lenght + i] = src[i];
 		i++;

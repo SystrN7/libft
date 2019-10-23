@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 10:25:08 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 11:54:54 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:17:44 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,15 +15,18 @@
 
 char			*ft_strrchr(const char *s, int c)
 {
-	int i;
+	size_t	i;
+	char	*last;
 
-	if (s == NULL)
-		return (NULL);
-	i = (ft_strlen(s) + 1);
-	while (i-- != 0)
+	i = 0;
+	last = NULL;
+	while (1 == 1)
 	{
 		if (s[i] == (char)c)
-			return ((char*)s + i);
+			last = (char *)(s + i);
+		if (s[i] == '\0')
+			break ;
+		i++;
 	}
-	return (NULL);
+	return (last);
 }

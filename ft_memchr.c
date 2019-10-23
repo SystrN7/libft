@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/09 09:19:02 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 08:37:09 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 16:01:42 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,11 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	needle;
 	size_t			i;
 
-	if (s == NULL)
-		return (NULL);
 	i = 0;
-	bytes_string = (unsigned char *)s;
 	needle = (unsigned char)c;
+	bytes_string = (unsigned char *)s;
 	while (i < n)
 	{
 		if (bytes_string[i] == needle)
