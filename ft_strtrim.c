@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 11:34:17 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/15 11:47:08 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/23 11:33:22 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,14 +36,14 @@ char		*ft_strtrim(char const *s1, char const *set)
 		while (*stop)
 			stop++;
 		stop--;
-		while (ft_is_in_charset(*start, set))
+		while (*start && ft_is_in_charset(*start, set))
 			start++;
-		while (ft_is_in_charset(*stop, set))
+		while (s1 <= stop && ft_is_in_charset(*stop, set))
 			stop--;
-		size = (stop - start > 0) ? stop - start : 0;
+		size = (stop - start > 0) ? (stop - start) + 1 : 0;
 	}
 	if (!(str = malloc(((size + 1) * sizeof(char)))))
 		return (NULL);
-	ft_strlcpy(str, start, size + 2);
+	ft_strlcpy(str, start, size + 1);
 	return (str);
 }

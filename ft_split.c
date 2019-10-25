@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 12:41:58 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/10 16:10:36 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/18 14:08:25 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -71,10 +71,13 @@ char				**ft_split(char const *s, char c)
 	tab = NULL;
 	if (ft_split_core(&tab, s, c) == NULL)
 	{
-		i = 0;
-		while (tab[i] != NULL || tab[i] != 0)
-			free(tab[i++]);
-		free(tab);
+		if (tab != NULL)
+		{
+			i = 0;
+			while (tab[i] != NULL || tab[i] != 0)
+				free(tab[i++]);
+			free(tab);
+		}
 		return (NULL);
 	}
 	return (tab);
