@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/10/16 14:46:34 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/10/25 11:01:01 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -65,7 +65,6 @@ NAME		= libft.a
 
 
 # Workings vars
-CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
 LIB_OBJS	=	${LIB_SRCS:.c=.o}
@@ -81,7 +80,7 @@ bonus: $(LIB_OBJS) $(BONUS_OBJS) $(HEADS)
 	ar rcs $(NAME) $(LIB_OBJS) $(BONUS_OBJS)
 
 %.o: %.c $(HEADS)
-	gcc $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(LIB_OBJS) $(BONUS_OBJS)
