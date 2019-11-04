@@ -1,17 +1,12 @@
 Revoir la structure des ficher
 
-refactoriser le code des list (remove ->new ect)
-corriger lst_clear
-
 Refacotiser :
-	- Reordoner le nom des varible
 	- Unifier le nomage des variable
 
 Coder plus proprement :
 	- itoa
 	- split
 	- putnbr
-
 
 Autres fonctions cool :
 	str(c)spn
