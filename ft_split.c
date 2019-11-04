@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 12:41:58 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/18 14:08:25 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/04 16:55:48 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,8 +19,6 @@ static unsigned int	ft_count_delimited(char const *string, char c)
 	unsigned int	seg_count;
 	unsigned int	i;
 
-	if (string == NULL)
-		return (0);
 	i = 0;
 	seg_count = 0;
 	prev_is_del = -1;
