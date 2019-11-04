@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/04 14:07:55 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/04 15:03:23 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -73,6 +73,9 @@ all:	$(NAME)
 
 $(NAME): $(LIB_OBJS) $(HEADS)
 	ar rcs $(NAME) $(LIB_OBJS)
+
+norminette:
+	norminette $(LIB_SRCS)
 
 %.o: %.c $(HEADS)
 	$(CC) $(CFLAGS) -c $< -o $@
