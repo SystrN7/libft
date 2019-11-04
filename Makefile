@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/10/25 15:58:53 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/04 11:17:03 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -59,9 +59,9 @@ BONUS_SRCS	=	ft_lstnew_bonus.c \
 
 
 
-HEADS		= libft.h
+HEADS		=	libft.h ft_type.h
 
-NAME		= libft.a
+NAME		=	libft.a
 
 
 # Workings vars
