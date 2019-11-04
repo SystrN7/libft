@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 11:25:54 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/24 09:18:33 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/04 11:11:54 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_list = NULL;
 	if (lst == NULL)
 		return (NULL);
-	while (lst->next)
+	while (lst)
 	{
 		if (!(new_list_elem = ft_lstnew(f(lst->content))))
 		{
@@ -31,9 +31,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&new_list, new_list_elem);
 		lst = lst->next;
 	}
-	if (!(new_list_elem = ft_lstnew(f(lst->content))))
-		ft_lstclear(&new_list, del);
-	else
-		ft_lstadd_back(&new_list, new_list_elem);
 	return (new_list);
 }

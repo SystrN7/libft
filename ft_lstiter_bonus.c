@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 11:20:46 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 13:49:02 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/10/30 08:30:09 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,10 +17,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst == NULL)
 		return ;
-	while (lst->next)
+	while (lst)
 	{
 		f(lst->content);
 		lst = lst->next;
 	}
-	f(lst->content);
 }
