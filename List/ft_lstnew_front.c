@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstadd_back.c                                 .::    .:/ .      .::   */
+/*   ft_lstnew_front.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/11 10:49:26 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 15:32:43 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/07 15:20:45 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/07 15:51:25 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **alst, t_list *new)
+t_list	*ft_lstnew_front(t_list **list, void *content, void (*del)(void *))
 {
-	t_list *lst;
+	t_list *link;
 
-	if (alst == NULL || new == NULL)
-		return ;
-	if (*alst != NULL)
+	if (!(link = ft_lstnew(content)))
 	{
-		lst = ft_lstlast(*alst);
-		lst->next = new;
+		del(content);
+		ft_lstclear(list, del);
+		return (NULL);
 	}
-	else
-		*alst = new;
+	ft_lstadd_front(list, link);
+	return (link);
 }

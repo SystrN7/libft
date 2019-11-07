@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/07 14:24:26 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/07 16:09:58 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -47,9 +47,12 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				File/ft_putendl_fd.c \
 				File/ft_putnbr_fd.c \
 				List/ft_lstnew.c \
+				List/ft_lstnew_front.c \
+				List/ft_lstnew_back.c \
 				List/ft_lstadd_front.c \
 				List/ft_lstadd_back.c \
-				List/ft_lstdelone.c \
+				List/ft_lstdel_link.c \
+				List/ft_lstremove_link.c \
 				List/ft_lstclear.c \
 				List/ft_lstsize.c \
 				List/ft_lstlast.c \

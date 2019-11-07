@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstdelone.c                                   .::    .:/ .      .::   */
+/*   ft_lstnew_back.c                                 .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/11 10:59:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/04 14:14:03 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/07 15:20:45 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/07 15:51:26 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstnew_back(t_list **list, void *content, void (*del)(void *))
 {
-	if (lst == NULL || lst->content == NULL)
-		return ;
-	del(lst->content);
-	free(lst);
-	lst = NULL;
+	t_list *link;
+
+	if (!(link = ft_lstnew(content)))
+	{
+		del(content);
+		ft_lstclear(list, del);
+		return (NULL);
+	}
+	ft_lstadd_back(list, link);
+	return (link);
 }

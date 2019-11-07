@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 11:06:37 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/04 14:13:56 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/07 15:47:31 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,7 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (elem_to_del)
 	{
 		elem_to_del_next = elem_to_del->next;
-		ft_lstdelone((elem_to_del), del);
+		ft_lstdel_link((elem_to_del), del);
 		elem_to_del = elem_to_del_next;
 	}
 	*lst = NULL;
