@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 16:12:50 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/07 16:30:52 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -36,6 +36,8 @@ int		ft_isascii(int c);
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
+char	*ft_lltostr(long long number);
+char	*ft_ulltostr(unsigned long long number);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
@@ -57,6 +59,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+size_t	ft_count_digits(long long number);
+size_t	ft_count_udigits(unsigned long long number);
 
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstnew_back(t_list **list, void *content, void (*del)(void *));

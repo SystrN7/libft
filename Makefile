@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/07 16:09:58 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/07 16:16:55 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -20,6 +20,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Memory/ft_memmove.c \
 				Memory/ft_memchr.c \
 				Memory/ft_memcmp.c \
+				Math/ft_count_digits.c \
 				Type/ft_isalpha.c \
 				Type/ft_isdigit.c \
 				Type/ft_isalnum.c \
@@ -27,6 +28,8 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Type/ft_isascii.c \
 				Type/Convert/ft_atoi.c \
 				Type/Convert/ft_itoa.c \
+				Type/Convert/ft_lltostr.c \
+				Type/Convert/ft_ulltostr.c \
 				Type/Convert/ft_toupper.c \
 				Type/Convert/ft_tolower.c \
 				String/ft_strlen.c \

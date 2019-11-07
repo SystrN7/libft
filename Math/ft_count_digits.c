@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_count_digits.c                                .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/10 16:18:06 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 15:06:49 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/07 14:36:20 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/07 16:30:36 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int number)
+size_t	ft_count_digits(long long number)
 {
-	return (ft_lltostr(number));
+	size_t digits;
+
+	digits = 1;
+	while (number /= 10)
+		digits++;
+	return (digits);
+}
+
+size_t	ft_count_udigits(unsigned long long number)
+{
+	size_t digits;
+
+	digits = 1;
+	while (number /= 10)
+		digits++;
+	return (digits);
 }
