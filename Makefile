@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/07 16:33:15 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/09 16:10:33 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -71,17 +71,20 @@ NAME		=	libft.a
 
 
 # Workings vars
+CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
 RM			=	rm -f
 BUILD_DIR	=	Build/
 LIB_OBJS	=	${LIB_SRCS:.c=.o}
-# LIB_OBJS := $(patsubst ./%.cpp,$(BUILD_DIR)/%.o,$(LIB_SRCS))
+
+AR			=	libtool
+ARFLAGS		=	-static -o
 
 
 all:	$(NAME)
 
 $(NAME): $(LIB_OBJS) $(HEADER)
-	ar rcs $(NAME) $(LIB_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(LIB_OBJS)
 
 norminette:
 	norminette $(LIB_SRCS) $(HEADER)
