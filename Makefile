@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/09 16:10:33 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/09 16:16:26 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -77,8 +77,8 @@ RM			=	rm -f
 BUILD_DIR	=	Build/
 LIB_OBJS	=	${LIB_SRCS:.c=.o}
 
-AR			=	libtool
-ARFLAGS		=	-static -o
+AR			=	ar
+ARFLAGS		=	rcs
 
 
 all:	$(NAME)
