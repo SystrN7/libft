@@ -6,14 +6,14 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 08:53:46 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 09:00:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/09 15:41:41 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(int fd, char *s)
 {
 	if (s != NULL && fd >= 0)
 		write(fd, s, ft_strlen(s));

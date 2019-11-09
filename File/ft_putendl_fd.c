@@ -6,14 +6,14 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 09:21:35 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/11 10:03:32 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/09 15:42:03 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(int fd, char *s)
 {
 	if (s != NULL && fd >= 0)
 	{

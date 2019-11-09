@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 16:30:52 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/09 15:43:31 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,10 +55,10 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(int fd, char c);
+void	ft_putstr_fd(int fd, char *s);
+void	ft_putendl_fd(int fd, char *s);
+void	ft_putnbr_fd(int fd, int n);
 
 size_t	ft_count_digits(long long number);
 size_t	ft_count_udigits(unsigned long long number);
