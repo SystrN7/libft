@@ -6,14 +6,14 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 09:30:31 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/09 15:40:49 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/11 10:26:47 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int fd, int n)
 {
 	char c;
 
