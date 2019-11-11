@@ -1,0 +1,8 @@
+.vscode
+# Test file
+main.c
+test*
+# Builded File
+libft.a
+*.o
+a.out
