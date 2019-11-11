@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/11 10:17:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/11 10:25:22 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/11 16:51:13 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -33,9 +33,10 @@ char	*ft_lstmerge_str_segments(t_list *segments)
 	i = 0;
 	while (segments)
 	{
-		y = ft_strlen(it->content);
-		ft_memcpy(str + i, it->content, y);
+		y = ft_strlen(segments->content);
+		ft_memcpy(str + i, segments->content, y);
 		i += y;
+		segments = segments->next;
 	}
 	str[segments_size] = '\0';
 	return (str);
