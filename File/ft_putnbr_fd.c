@@ -6,32 +6,30 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 09:30:31 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/11 10:26:47 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/14 10:57:21 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int fd, int n)
+void	ft_putnbr_fd(int fd, long long number)
 {
-	char c;
+	int		i;
+	int		digits;
+	char	buffer[20];
+	int		is_negative;
 
-	if (fd < 0)
-		return ;
-	if (n == -2147483648)
+	i = 0;
+	is_negative = (number < 0);
+	digits = ft_count_digits(number);
+	i = digits + is_negative;
+	while (i)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		buffer[--i] = '0' + (number % 10) * ((is_negative * -2) + 1);
+		number /= 10;
 	}
-	if (n < 0)
-	{
-		write(fd, "-", 1);
-		n = -n;
-	}
-	c = (n % 10) + '0';
-	n /= 10;
-	if (n > 0)
-		ft_putnbr_fd(n, fd);
-	write(fd, &c, 1);
+	if (is_negative)
+		buffer[0] = '-';
+	write(fd, buffer, digits + is_negative);
 }
