@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/14 10:44:26 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/14 12:12:36 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,6 +38,11 @@ int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	*ft_lltostr(long long number);
 char	*ft_ulltostr(unsigned long long number);
+char	*ft_base_ulltostr(unsigned long long number, char *base);
+size_t	ft_count_digits_base(int base_size, unsigned long long number);
+char	ft_is_in_base(char c, char *base);
+int		ft_check_base(char *base);
+char	*ft_is_negative(char *str, char *is_negative);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
