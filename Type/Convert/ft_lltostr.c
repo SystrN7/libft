@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/07 14:55:04 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 15:11:41 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/14 10:38:19 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -28,11 +28,11 @@ char	*ft_lltostr(long long number)
 	i = digits + is_negative;
 	while (i)
 	{
-		str[--i] = (number % 10) + '0' * (is_negative * -1);
+		str[--i] = '0' + (number % 10) * ((is_negative * -2) + 1);
 		number /= 10;
 	}
 	if (is_negative)
 		str[0] = '-';
-	str[digits] = '\0';
+	str[digits + is_negative] = '\0';
 	return (str);
 }
