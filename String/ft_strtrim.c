@@ -6,20 +6,12 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/10 11:34:17 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/10/23 11:33:22 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/15 08:44:43 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_is_in_charset(const char c, char const *charset)
-{
-	while (*charset)
-		if (c == *charset++)
-			return (1);
-	return (0);
-}
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
