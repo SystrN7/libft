@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/14 12:15:17 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/15 08:18:40 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -27,6 +27,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Type/ft_isprint.c \
 				Type/ft_isascii.c \
 				Type/Convert/ft_atoi.c \
+				Type/Convert/ft_strtoll.c \
 				Type/Convert/ft_itoa.c \
 				Type/Convert/ft_lltostr.c \
 				Type/Convert/ft_ulltostr.c \

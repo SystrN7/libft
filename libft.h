@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/14 12:12:36 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/15 08:18:55 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,6 +35,7 @@ int		ft_isprint(int c);
 int		ft_isascii(int c);
 
 int		ft_atoi(const char *str);
+size_t	ft_strtoll(char *str, long long *number);
 char	*ft_itoa(int n);
 char	*ft_lltostr(long long number);
 char	*ft_ulltostr(unsigned long long number);
