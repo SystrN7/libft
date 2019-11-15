@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_type.h                                        .::    .:/ .      .::   */
+/*   ft_lst_associative_get.c                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/15 13:20:03 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/15 13:06:52 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/15 15:11:58 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef FT_TYPE_H
-# define FT_TYPE_H
+#include "libft.h"
 
-# define TRUE 1
-# define FALSE 0
-
-typedef char		t_boolean;
-typedef char		t_byte;
-typedef t_byte*		t_bytes;
-
-typedef struct		s_list
+void	*ft_lst_associative_get(const t_list *list, char *key)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_list			*it;
+	t_associative	*element;
 
-typedef struct		s_associative
-{
-	char			*key;
-	void			*value;
-}					t_associative;
-
-#endif
+	it = (t_list*)list;
+	while (it)
+	{
+		element = (t_associative*)it->content;
+		if (!ft_strncmp(key, element->key, 76))
+			return (element);
+		it = it->next;
+	}
+	return (NULL);
+}

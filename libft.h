@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/15 08:48:04 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/15 15:10:09 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -83,5 +83,9 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_lstmerge_str_segments(t_list *segments);
+
+t_list	*ft_lst_associative_set(t_list **list, char *key, void *new_value);
+void	*ft_lst_associative_get(const t_list *list, char *key);
+void	ft_lst_associative_del(void *to_del);
 
 #endif
