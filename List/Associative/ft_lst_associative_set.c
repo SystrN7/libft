@@ -6,30 +6,52 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/15 13:06:59 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/15 15:11:17 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/16 14:48:28 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lst_associative_set(t_list **list, char *key, void *new_value)
+static void	*ft_lst_get_associative(const t_list *list, char *key)
+{
+	t_list			*it;
+	t_associative	*element;
+
+	it = (t_list*)list;
+	while (it)
+	{
+		element = (t_associative*)it->content;
+		if (!ft_strncmp(key, element->key, 76))
+			return (element);
+		it = it->next;
+	}
+	return (NULL);
+}
+
+t_list		*ft_lst_associative_set(t_list **list, char *key, void *value)
 {
 	t_associative	*associative;
 
-	if ((associative = ft_lst_associative_get(*list, key)))
+	if ((associative = ft_lst_get_associative(*list, key)))
 	{
 		if (associative->value != NULL)
 			free(associative->value);
-		associative->value = new_value;
-		return (associative->value);
 	}
 	else
 	{
 		if ((associative = malloc(sizeof(t_associative))))
-			ft_lstnew_front(list, associative, ft_lst_associative_del);
+		{
+			associative->key = key;
+			if (!(ft_lstnew_front(list, associative, ft_lst_associative_del)))
+			{
+				free(associative);
+				return (NULL);
+			}
+		}
 		else
 			return (NULL);
 	}
+	associative->value = value;
 	return (*list);
 }

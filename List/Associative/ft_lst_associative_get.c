@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/15 13:06:52 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/15 15:11:58 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/16 14:40:26 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@ void	*ft_lst_associative_get(const t_list *list, char *key)
 	{
 		element = (t_associative*)it->content;
 		if (!ft_strncmp(key, element->key, 76))
-			return (element);
+			return (element->value);
 		it = it->next;
 	}
 	return (NULL);
