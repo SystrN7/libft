@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/15 13:06:59 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/16 14:48:28 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/16 15:52:19 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -43,11 +43,8 @@ t_list		*ft_lst_associative_set(t_list **list, char *key, void *value)
 		if ((associative = malloc(sizeof(t_associative))))
 		{
 			associative->key = key;
-			if (!(ft_lstnew_front(list, associative, ft_lst_associative_del)))
-			{
-				free(associative);
+			if (!(ft_lstnew_front(list, associative, free)))
 				return (NULL);
-			}
 		}
 		else
 			return (NULL);
