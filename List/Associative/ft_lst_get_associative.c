@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_lstdel_link.c                                 .::    .:/ .      .::   */
+/*   ft_lst_get_associative.c                         .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/11 10:59:10 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/20 11:49:11 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/20 14:09:27 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/20 14:11:02 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel_link(t_list *link, void (*del)(void*))
+void	*ft_lst_get_associative(const t_list *list, char *key)
 {
-	if (link == NULL || link->content == NULL)
-		return ;
-	if (del != NULL)
-		del(link->content);
-	free(link);
-	link = NULL;
+	t_list			*it;
+	t_associative	*element;
+
+	it = (t_list*)list;
+	while (it)
+	{
+		element = (t_associative*)it->content;
+		if (!ft_strncmp(key, element->key, 76))
+			return (element);
+		it = it->next;
+	}
+	return (NULL);
 }

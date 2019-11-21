@@ -6,28 +6,12 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/15 13:06:59 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/16 15:52:19 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/20 14:11:08 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	*ft_lst_get_associative(const t_list *list, char *key)
-{
-	t_list			*it;
-	t_associative	*element;
-
-	it = (t_list*)list;
-	while (it)
-	{
-		element = (t_associative*)it->content;
-		if (!ft_strncmp(key, element->key, 76))
-			return (element);
-		it = it->next;
-	}
-	return (NULL);
-}
 
 t_list		*ft_lst_associative_set(t_list **list, char *key, void *value)
 {
