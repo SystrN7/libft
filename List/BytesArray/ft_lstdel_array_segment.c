@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_type.h                                        .::    .:/ .      .::   */
+/*   ft_lstdel_array_segment.c                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/21 08:30:10 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/21 09:11:08 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/21 09:29:03 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef FT_TYPE_H
-# define FT_TYPE_H
+#include "libft.h"
 
-# define TRUE 1
-# define FALSE 0
-
-typedef char		t_boolean;
-typedef char		t_byte;
-typedef t_byte*		t_bytes;
-
-typedef struct		s_list
+void	ft_lstdel_array_segment(void *to_del)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-
-typedef struct		s_bytes_array
-{
-	size_t			size;
-	char			*array;
-}					t_bytes_array;
-
-typedef struct		s_associative
-{
-	char			*key;
-	void			*value;
-}					t_associative;
-
-#endif
+	if (to_del == NULL)
+		return ;
+	if (((t_bytes_array *)to_del)->array != NULL)
+		free(((t_bytes_array *)to_del)->array);
+	free(to_del);
+}

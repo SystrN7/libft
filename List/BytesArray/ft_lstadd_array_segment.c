@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_type.h                                        .::    .:/ .      .::   */
+/*   ft_lstadd_array_segment.c                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/21 08:30:10 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Created: 2019/11/21 08:57:54 by fgalaup      #+#   ##    ##    #+#       */
+/*   Updated: 2019/11/21 09:44:29 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#ifndef FT_TYPE_H
-# define FT_TYPE_H
+#include "libft.h"
 
-# define TRUE 1
-# define FALSE 0
-
-typedef char		t_boolean;
-typedef char		t_byte;
-typedef t_byte*		t_bytes;
-
-typedef struct		s_list
+t_list	*ft_lstadd_array_segment(t_list **segments, size_t size, char *array)
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_bytes_array	*bytes_array;
 
-typedef struct		s_bytes_array
-{
-	size_t			size;
-	char			*array;
-}					t_bytes_array;
-
-typedef struct		s_associative
-{
-	char			*key;
-	void			*value;
-}					t_associative;
-
-#endif
+	if (!(bytes_array = malloc(sizeof(t_bytes_array))))
+	{
+		free(array);
+		return (NULL);
+	}
+	bytes_array->size = size;
+	bytes_array->array = array;
+	return (ft_lstnew_back(segments, bytes_array, ft_lstdel_array_segment));
+}
