@@ -6,12 +6,13 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/21 08:22:17 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/21 09:54:42 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/21 17:37:17 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 /*
 **	Function : ft_lstmerge_segment
@@ -36,7 +37,7 @@ ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str)
 	it = segment_list;
 	while (it)
 	{
-		str_lenght += ((t_bytes_array *)it)->size;
+		str_lenght += ((t_bytes_array *)it->content)->size;
 		it = it->next;
 	}
 	if (!(*str = (char *)malloc((str_lenght + 1) * sizeof(char))))
@@ -45,8 +46,8 @@ ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str)
 	while (segment_list)
 	{
 		y = 0;
-		while (y < ((t_bytes_array *)segment_list)->size)
-			(*str)[i++] = ((t_bytes_array *)it)->array[y++];
+		while (y < ((t_bytes_array *)segment_list->content)->size)
+			(*str)[i++] = ((t_bytes_array *)segment_list->content)->array[y++];
 		segment_list = segment_list->next;
 	}
 	(*str)[str_lenght] = '\0';
