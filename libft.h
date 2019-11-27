@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/21 09:54:57 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/27 16:04:14 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -66,6 +66,7 @@ void	ft_putchar_fd(int fd, char c);
 void	ft_putstr_fd(int fd, char *s);
 void	ft_putendl_fd(int fd, char *s);
 void	ft_putnbr_fd(int fd, long long n);
+char	*ft_file_get_extention(char *file_name);
 
 size_t	ft_count_digits(long long number);
 size_t	ft_count_udigits(unsigned long long number);
