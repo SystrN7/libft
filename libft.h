@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/27 16:04:14 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/27 16:48:20 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,6 +18,9 @@
 # include <unistd.h>
 
 # include "ft_type.h"
+
+# include "ft_format.h"
+# include "ft_format_type.h"
 
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *b, int c, size_t len);
@@ -61,6 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strformat(char **result, const char *format, ...);
 
 void	ft_putchar_fd(int fd, char c);
 void	ft_putstr_fd(int fd, char *s);

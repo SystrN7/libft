@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/27 16:04:43 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/27 16:50:38 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -49,7 +49,9 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				String/ft_split.c \
 				String/ft_strtrim.c \
 				String/ft_strmapi.c \
+				String/ft_strformat.c \
 				File/ft_file_get_extention.c \
+				File/ft_printf_fd.c \
 				File/ft_putchar_fd.c \
 				File/ft_putstr_fd.c \
 				File/ft_putendl_fd.c \
@@ -73,11 +75,30 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/Associative/ft_lst_associative_del.c \
 				List/BytesArray/ft_lstadd_array_segment.c \
 				List/BytesArray/ft_lstmerge_segment.c \
-				List/BytesArray/ft_lstdel_array_segment.c
+				List/BytesArray/ft_lstdel_array_segment.c \
+				Format/ft_parser.c \
+				Format/ft_format.c \
+				Format/ft_flags.c \
+				Format/ft_converter.c \
+				Format/Converter/ft_converter_percent.c \
+				Format/Converter/ft_converter_char.c \
+				Format/Converter/ft_converter_string.c \
+				Format/Converter/ft_converter_pointer.c \
+				Format/Converter/ft_converter_integer.c \
+				Format/Converter/ft_converter_unsigned.c \
+				Format/Converter/ft_converter_hexa_upper.c \
+				Format/Converter/ft_converter_hexa_lower.c \
+				Format/Flags/ft_flags_utils.c \
+				Format/Flags/ft_flag_zero.c \
+				Format/Flags/ft_flag_fs.c \
+				Format/Flags/ft_flag_less.c \
+				Format/Flags/ft_flag_dot.c \
+				Format/Flags/ft_flag_star.c \
+				Format/Flags/ft_flag_sharp.c
 
 
 
-HEADER		=	libft.h ft_type.h
+HEADER		=	libft.h ft_type.h ft_format.h ft_format_type.h
 HEADER_DIR	=	$(shell pwd)
 
 NAME		=	libft.a
