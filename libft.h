@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/28 11:35:18 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/28 14:43:47 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -72,6 +72,8 @@ void	ft_putchar_fd(int fd, char c);
 void	ft_putstr_fd(int fd, char *s);
 void	ft_putendl_fd(int fd, char *s);
 void	ft_putnbr_fd(int fd, long long n);
+int		ft_printf(const char *format, ...);
+int		ft_printf_fd(int fd, const char *format, ...);
 char	*ft_file_get_extention(char *file_name);
 int		get_next_line(int fd, char **line);
 int		get_next_line_core(t_open_fd *context, char **line);
