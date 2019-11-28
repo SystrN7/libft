@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/27 16:48:20 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/28 11:35:18 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,11 +18,13 @@
 # include <unistd.h>
 
 # include "ft_type.h"
+# include "ft_define.h"
 
 # include "ft_format.h"
 # include "ft_format_type.h"
 
 void	*ft_calloc(size_t count, size_t size);
+void	*ft_memdup(void *bytes_array, size_t array_size);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -71,6 +73,10 @@ void	ft_putstr_fd(int fd, char *s);
 void	ft_putendl_fd(int fd, char *s);
 void	ft_putnbr_fd(int fd, long long n);
 char	*ft_file_get_extention(char *file_name);
+int		get_next_line(int fd, char **line);
+int		get_next_line_core(t_open_fd *context, char **line);
+int		ft_reads_line(t_open_fd *context, char *buff, t_list **lst);
+ssize_t	ft_add_line_segment(t_list **list, char *str, size_t str_size);
 
 size_t	ft_count_digits(long long number);
 size_t	ft_count_udigits(unsigned long long number);

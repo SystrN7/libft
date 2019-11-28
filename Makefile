@@ -6,13 +6,14 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2019/11/27 16:50:38 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2019/11/28 11:46:01 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 # Project vars
 LIB_SRCS	=	Memory/ft_calloc.c \
+				Memory/ft_memdup.c \
 				Memory/ft_memset.c \
 				Memory/ft_bzero.c \
 				Memory/ft_memcpy.c \
@@ -50,6 +51,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				String/ft_strtrim.c \
 				String/ft_strmapi.c \
 				String/ft_strformat.c \
+				File/get_next_line.c \
 				File/ft_file_get_extention.c \
 				File/ft_printf_fd.c \
 				File/ft_putchar_fd.c \
@@ -98,7 +100,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 
 
 
-HEADER		=	libft.h ft_type.h ft_format.h ft_format_type.h
+HEADER		=	libft.h ft_type.h ft_define.h ft_format.h ft_format_type.h
 HEADER_DIR	=	$(shell pwd)
 
 NAME		=	libft.a
@@ -106,7 +108,7 @@ NAME		=	libft.a
 
 # Workings vars
 CC			=	gcc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g3
 RM			=	rm -f
 BUILD_DIR	=	Build/
 LIB_OBJS	=	${LIB_SRCS:.c=.o}

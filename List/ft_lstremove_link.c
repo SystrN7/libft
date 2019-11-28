@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/11/07 15:33:35 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/07 16:10:48 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/28 13:05:36 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,6 +35,7 @@ void	ft_lstremove_link(t_list **list, t_list *link_del, void (*del)(void*))
 			link_befor_del->next = list_it->next;
 		else if (link_befor_del != NULL)
 			link_befor_del->next = NULL;
-		ft_lstdel_link(*list, del);
+		ft_lstdel_link(link_del, del);
+		link_del = NULL;
 	}
 }

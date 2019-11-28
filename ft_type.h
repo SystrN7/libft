@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/21 08:30:10 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/11/28 10:00:48 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -38,5 +38,22 @@ typedef struct		s_associative
 	char			*key;
 	void			*value;
 }					t_associative;
+
+/*
+** Type Name: t_open_fd
+** Description : This structure type store one file descriptor
+** 					with non returned content.
+** Vars :
+**	-	(int) fd : The file desciptor (id).
+** 	-	(ssize) size : the size of unreturned content.
+**	-	(char *) over : The unreturned content.
+*/
+
+typedef struct		s_open_fd
+{
+	int				fd;
+	ssize_t			size;
+	char			*over;
+}					t_open_fd;
 
 #endif
