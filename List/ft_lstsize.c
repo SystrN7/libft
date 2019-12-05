@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/11 10:42:02 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/04 14:14:45 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/05 14:14:46 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,8 +22,8 @@ int		ft_lstsize(t_list *lst)
 	size = 0;
 	while (lst)
 	{
-		lst = lst->next;
 		size++;
+		lst = lst->next;
 	}
 	return (size);
 }
