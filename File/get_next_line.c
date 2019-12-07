@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/21 14:54:57 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/28 13:08:11 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/07 15:36:54 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -22,9 +22,9 @@
 **		-	(char **)line Varible to retrun the line
 **			(set as NULL if no line as read)
 **	Return (int)
-**		-	1 : If line as read ;
-**		-	0 : If is the last line ;
-**		-	-1 : If an error occurred during the reading ;
+**		-	1 : If line as read
+**		-	0 : If no char as restunred and end of the file has been reached
+**		-	-1 : If an error occurred during the reading
 */
 
 int		get_next_line(int fd, char **line)
@@ -67,7 +67,7 @@ int		get_next_line(int fd, char **line)
 **			(set as NULL if no line as read)
 **	Return (int)
 **		-	1 : If line as read
-**		-	0 : If is the last line or if no char as read
+**		-	0 : If no char as restunred and end of the file has been reached
 **		-	-1 : If an error occurred during the reading
 */
 
@@ -139,7 +139,7 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 			if (!(context->over = ft_memdup(buffer, context->size)))
 				return (-2);
 	}
-	return ((readed == BUFFER_SIZE) || context->size);
+	return (((readed) || context->size) && *list != NULL);
 }
 
 /*
