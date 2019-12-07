@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/05 13:36:24 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/05 14:35:41 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/07 11:03:41 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -39,5 +39,5 @@ void	**ft_lstmerge_2d(t_list *list)
 		it = it->next;
 	}
 	returned[i] = NULL;
-	return (0);
+	return (returned);
 }
