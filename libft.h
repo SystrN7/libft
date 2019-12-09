@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/09 15:23:32 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/09 16:17:14 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -118,6 +118,11 @@ ssize_t	ft_add_line_segment(t_list **list, char *str, size_t str_size);
 
 size_t	ft_count_digits(long long number);
 size_t	ft_count_udigits(unsigned long long number);
+
+size_t	ft_absolute_ll(long number);
+double	ft_absolute_f(double number);
+size_t	ft_abs(long long number);
+double	ft_absf(double number);
 
 /*
 ** =============================================================================
