@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/07 16:16:00 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/09 16:47:43 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/11 09:00:15 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -130,8 +130,8 @@ double	ft_absf(double number);
 ** -----------------------------------------------------------------------------
 */
 
-double	degree_to_radian(double angle);
-double	radian_to_degree(double angle);
+double	ft_degree_to_radian(double angle);
+double	ft_radian_to_degree(double angle);
 
 t_xy	ft_get_vector(double angle, double magnitude);
 double	ft_get_x_vector(double angle, double magnitude);
