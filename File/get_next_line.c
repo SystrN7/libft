@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/21 14:54:57 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/07 15:36:54 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/12/16 09:20:20 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -139,7 +139,7 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 			if (!(context->over = ft_memdup(buffer, context->size)))
 				return (-2);
 	}
-	return (((readed) || context->size) && *list != NULL);
+	return ((*list && ((t_ba *)(*list)->content)->size) || context->size);
 }
 
 /*
