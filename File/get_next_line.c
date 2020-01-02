@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/21 14:54:57 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/16 09:20:20 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/02 10:43:20 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -23,7 +23,7 @@
 **			(set as NULL if no line as read)
 **	Return (int)
 **		-	1 : If line as read
-**		-	0 : If no char as restunred and end of the file has been reached
+**		-	0 : If is the last line
 **		-	-1 : If an error occurred during the reading
 */
 
@@ -67,7 +67,7 @@ int		get_next_line(int fd, char **line)
 **			(set as NULL if no line as read)
 **	Return (int)
 **		-	1 : If line as read
-**		-	0 : If no char as restunred and end of the file has been reached
+**		-	0 : If is the last line
 **		-	-1 : If an error occurred during the reading
 */
 
@@ -139,7 +139,7 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 			if (!(context->over = ft_memdup(buffer, context->size)))
 				return (-2);
 	}
-	return ((*list && ((t_ba *)(*list)->content)->size) || context->size);
+	return ((readed == BUFFER_SIZE) || context->size);
 }
 
 /*
