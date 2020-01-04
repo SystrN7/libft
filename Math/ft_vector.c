@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 14:09:24 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/09 16:49:10 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/04 10:31:41 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -46,7 +46,7 @@ t_xy	ft_get_vector(double angle, double magnitude)
 
 double	ft_get_x_vector(double angle, double magnitude)
 {
-	return (sin(angle) * magnitude);
+	return (cos(angle) * magnitude);
 }
 
 /*
@@ -61,5 +61,5 @@ double	ft_get_x_vector(double angle, double magnitude)
 
 double	ft_get_y_vector(double angle, double magnitude)
 {
-	return (cos(angle) * magnitude);
+	return (sin(angle) * magnitude);
 }
