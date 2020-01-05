@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/12/09 16:03:18 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/05 11:47:50 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -106,7 +106,8 @@ typedef struct		s_associative
 
 /*
 ** Type Name: t_xy
-** Description : This structure type store tow number representing have.
+** Description : This structure type store tow number representing vector,
+** coordonee.
 ** Vars :
 **	-	double x : The value for the axis of X-axis (abscissa).
 ** 	-	double y : The value for the axis of Y-axis (???).
@@ -117,6 +118,20 @@ typedef struct		s_xy
 	double			x;
 	double			y;
 }					t_xy;
+
+/*
+** Type Name: t_xy
+** Description : This structure type store tow number representing coordonee.
+** Vars :
+**	-	int x : The value for the axis of X-axis (abscissa).
+** 	-	int y : The value for the axis of Y-axis (???).
+*/
+
+typedef struct		s_pos
+{
+	int			x;
+	int			y;
+}					t_pos;
 
 /*
 ** =============================================================================
