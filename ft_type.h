@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/10/25 16:30:05 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/05 11:47:50 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 15:19:03 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -35,6 +35,7 @@ enum				e_boolean
 	TRUE
 };
 typedef char		t_boolean;
+typedef t_boolean		t_bool;
 
 /*
 ** Type Name: t_byte
