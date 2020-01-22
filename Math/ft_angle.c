@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/12/09 13:58:59 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/05 09:25:37 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 15:29:32 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,7 +17,7 @@
 /*
 **	Function : ft_degree_to_radian
 **	Decription : Convert an angle in degrees to an angle in radians
-**	the angle is always between 0 and 2pi 
+**	the angle is always between 0 and 2pi
 **	Parameter :
 **		-	(number) angle : Angle in degree
 **	Return (int)
