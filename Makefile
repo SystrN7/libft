@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2020/01/02 09:28:42 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/22 15:28:30 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -83,6 +83,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/BytesArray/ft_lstadd_array_segment.c \
 				List/BytesArray/ft_lstmerge_segment.c \
 				List/BytesArray/ft_lstdel_array_segment.c \
+				List/ft_lst_sort.c \
 				Format/ft_parser.c \
 				Format/ft_format.c \
 				Format/ft_flags.c \

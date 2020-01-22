@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/22 10:43:19 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/22 11:16:29 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/22 15:29:54 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -30,6 +30,7 @@ t_list	*ft_lst_sort(t_list *list, t_boolean (*is_sort)(void *, void *))
 	t_list	*it;
 	void	*tmp;
 
+	it = list;
 	while (it->next)
 	{
 		if (is_sort(it->content, it->next->content))
