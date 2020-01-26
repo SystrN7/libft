@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2020/01/22 15:28:30 by fgalaup     ###    #+. /#+    ###.fr      #
+#    Updated: 2020/01/26 11:11:05 by fgalaup     ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -22,6 +22,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Memory/ft_memchr.c \
 				Memory/ft_memcmp.c \
 				Memory/ft_nothing.c \
+				Memory/ft_free2d.c \
 				Math/ft_count_digits.c \
 				Math/ft_absolute.c \
 				Math/ft_angle.c \
