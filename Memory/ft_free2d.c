@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2020/01/26 10:28:01 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2020/01/26 10:32:04 by fgalaup     ###    #+. /#+    ###.fr     */
+/*   Updated: 2020/01/27 09:56:49 by fgalaup     ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,6 +15,7 @@
 
 void	ft_free2d(void **address)
 {
-	while (*address)
-		free(*(address++));
+	if (address)
+		while (*address)
+			free(*(address++));
 }
