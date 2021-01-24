@@ -1,17 +1,27 @@
 /* ************************************************************************** */
-/*                                                          LE - /            */
-/*                                                              /             */
-/*   ft_lstremove_link.c                              .::    .:/ .      .::   */
-/*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+     */
-/*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2019/11/07 15:33:35 by fgalaup      #+#   ##    ##    #+#       */
-/*   Updated: 2019/11/28 13:05:36 by fgalaup     ###    #+. /#+    ###.fr     */
-/*                                                         /                  */
-/*                                                        /                   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstremove_link.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 15:33:35 by fgalaup           #+#    #+#             */
+/*   Updated: 2021/01/24 13:33:37 by fgalaup          ###   ########lyon.fr   */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Function : ft_lstremove_link
+** Decription : Removes a link from the list without breaking its continuity
+** Parameter :
+** 	- (t_list** list) list containing the element to del
+**  - (t_list* link) link to delete
+**  - (t_list *) function to delete de link content
+**
+** Return (void) : nothing
+*/
 
 void	ft_lstremove_link(t_list **list, t_list *link_del, void (*del)(void*))
 {
