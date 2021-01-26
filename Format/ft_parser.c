@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:48:51 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:45 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:43:41 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ ssize_t	ft_format_parser(char *format, va_list args, t_list **converted)
 				return (-1);
 			if ((i += ft_format_parse_one(format + i, args, parsed_arg)) < 0)
 				return (-1);
-			if (!(ft_lstnew_back(converted, parsed_arg, free)))
+			if (!(ft_lstnew_back(converted, parsed_arg, ft_managed_free)))
 				return (-1);
 		}
 		else
@@ -94,7 +94,7 @@ t_ba	*ft_format_convert(char *start, va_list args, t_list *flags)
 	t_bytes_array		*segment;
 
 	converters = ft_modular_converter();
-	if (!(segment = malloc(sizeof(t_bytes_array))))
+	if (!(segment = ft_managed_malloc(sizeof(t_bytes_array))))
 		return (NULL);
 	segment->size = 0;
 	segment->array = NULL;
@@ -107,6 +107,6 @@ t_ba	*ft_format_convert(char *start, va_list args, t_list *flags)
 		}
 		converters++;
 	}
-	free(segment);
+	ft_managed_free(segment);
 	return (NULL);
 }

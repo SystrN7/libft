@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:06:31 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/26 11:21:33 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@
 **									GENERIC
 ** =============================================================================
 */
+
+/*
+** Type Name: f_termination
+** Description : This type contain ptr to the function call when malloc failure
+** occure to terminating the programme.
+*/
+
+typedef void				(*t_ftermination)(void *);
+typedef t_ftermination		t_term;
 
 /*
 ** Type Name: t_boolean

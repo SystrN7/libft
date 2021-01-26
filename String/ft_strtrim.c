@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:34:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:07:59 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:28:46 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 			stop--;
 		size = (stop - start > 0) ? (stop - start) + 1 : 0;
 	}
-	if (!(str = malloc(((size + 1) * sizeof(char)))))
+	if (!(str = ft_managed_malloc(((size + 1) * sizeof(char)))))
 		return (NULL);
 	ft_strlcpy(str, start, size + 1);
 	return (str);

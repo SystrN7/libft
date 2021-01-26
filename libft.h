@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:13:19 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 16:34:57 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,12 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_nothing(void *address);
 void	ft_free2d(void **address);
+
+t_list	**ft_managed_get_malloc_list(void);
+void	*ft_managed_malloc(size_t size);
+void	ft_managed_free(void *ptr);
+void	ft_managed_free_all(void);
+t_term	ft_managed_termination_function(t_ftermination f);
 
 /*
 ** =============================================================================

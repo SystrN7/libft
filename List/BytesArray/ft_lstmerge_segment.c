@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 08:22:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:10:26 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:25:23 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str)
 		str_lenght += ((t_bytes_array *)it->content)->size;
 		it = it->next;
 	}
-	if (!(*str = (char *)malloc((str_lenght + 1) * sizeof(char))))
+	if (!(*str = (char *)ft_managed_malloc((str_lenght + 1) * sizeof(char))))
 		return (-1);
 	i = 0;
 	while (segment_list)

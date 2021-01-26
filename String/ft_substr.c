@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 09:11:01 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:07:54 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:28:50 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	else if (str_lenght < (start + len))
 		len = str_lenght - start;
-	if (!(str = malloc((len + 1) * sizeof(char))))
+	if (!(str = ft_managed_malloc((len + 1) * sizeof(char))))
 		return (NULL);
 	i = 0;
 	while (i < len)

@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 13:36:24 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:11:28 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:27:06 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	**ft_lstmerge_2d(t_list *list)
 			first_size++;
 		it = it->next;
 	}
-	if (!(returned = malloc((first_size + 1) * sizeof(void *))))
+	if (!(returned = ft_managed_malloc((first_size + 1) * sizeof(void *))))
 		return (NULL);
 	i = 0;
 	it = list;

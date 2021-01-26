@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 09:38:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:42 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:26:12 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	converter_char(va_list args, t_list *flags, t_ba *r)
 	int		is_zero;
 	size_t	length;
 
-	if (!(converted = malloc(2 * sizeof(char))))
+	if (!(converted = ft_managed_malloc(2 * sizeof(char))))
 		return ;
 	converted[0] = (char)va_arg(args, int);
 	converted[1] = '\0';

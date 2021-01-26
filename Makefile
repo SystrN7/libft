@@ -1,15 +1,15 @@
 # **************************************************************************** #
-#                                                           LE - /             #
-#                                                               /              #
-#    Makefile                                         .::    .:/ .      .::    #
-#                                                  +:+:+   +:    +:  +:+:+     #
-#    By: fgalaup <fgalaup@student.le-101.fr>        +:+   +:    +:    +:+      #
-#                                                  #+#   #+    #+    #+#       #
-#    Created: 2019/10/07 14:30:58 by fgalaup      #+#   ##    ##    #+#        #
-#    Updated: 2020/01/26 11:11:05 by fgalaup     ###    #+. /#+    ###.fr      #
-#                                                          /                   #
-#                                                         /                    #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
+#    Updated: 2021/01/26 11:44:09 by fgalaup          ###   ########lyon.fr    #
+#                                                                              #
 # **************************************************************************** #
+
 
 # Project vars
 LIB_SRCS	=	Memory/ft_calloc.c \
@@ -23,6 +23,9 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Memory/ft_memcmp.c \
 				Memory/ft_nothing.c \
 				Memory/ft_free2d.c \
+				Memory/Manager/ft_manager.c \
+				Memory/Manager/ft_malloc.c \
+				Memory/Manager/ft_free.c \
 				Math/ft_count_digits.c \
 				Math/ft_absolute.c \
 				Math/ft_angle.c \
@@ -125,6 +128,8 @@ ARFLAGS		=	rcs
 
 
 all:	$(NAME)
+
+bonus: $(NAME)
 
 $(NAME): $(LIB_OBJS) $(HEADER)
 	$(AR) $(ARFLAGS) $(NAME) $(LIB_OBJS)

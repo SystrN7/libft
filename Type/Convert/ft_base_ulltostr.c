@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 11:40:41 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:07:24 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:28:53 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_base_ulltostr(unsigned long long number, char *base)
 	if (!(base_size = ft_check_base(base)))
 		return (ft_strdup(""));
 	digits = ft_count_digits_base(base_size, number);
-	if (!(str = malloc((digits + 1) * sizeof(char))))
+	if (!(str = ft_managed_malloc((digits + 1) * sizeof(char))))
 		return (NULL);
 	i = digits;
 	while (i)

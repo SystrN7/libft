@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 15:13:38 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:08 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:30:27 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*flag_pars_sharp(char **start, t_list **flags)
 	if (**start == '#')
 	{
 		(*start)++;
-		if (!(value = malloc(sizeof(char))))
+		if (!(value = ft_managed_malloc(sizeof(char))))
 			return (NULL);
 		*value = TRUE;
 	}
@@ -39,13 +39,13 @@ char	*format_sharp(char *indicator, char *converted, t_list *params)
 	{
 		if (!(apply_flag = ft_strjoin("0x", converted)))
 			return (NULL);
-		free(converted);
+		ft_managed_free(converted);
 	}
 	else if (*indicator == 'X')
 	{
 		if (!(apply_flag = ft_strjoin("0X", converted)))
 			return (NULL);
-		free(converted);
+		ft_managed_free(converted);
 	}
 	else
 		apply_flag = converted;

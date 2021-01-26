@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 14:27:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:13:12 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:29:43 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_printf(const char *format, ...)
 	size += (size != 0) * -1;
 	if (write(1, buffer, size) < 0)
 		return (-1);
-	free(buffer);
+	ft_managed_free(buffer);
 	return (size);
 }
 
@@ -59,6 +59,6 @@ int		ft_printf_fd(int fd, const char *format, ...)
 	size += (size != 0) * -1;
 	if (write(fd, buffer, size) < 0)
 		return (-1);
-	free(buffer);
+	ft_managed_free(buffer);
 	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:54:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:57 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:22:51 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		get_next_line(int fd, char **line)
 		use_fd = use_fd->next;
 	if (use_fd == NULL || ((t_open_fd *)use_fd->content)->fd != fd)
 	{
-		if (!(use_fd = ft_lstnew(malloc(sizeof(t_open_fd)))))
+		if (!(use_fd = ft_lstnew(ft_managed_malloc(sizeof(t_open_fd)))))
 			return (-1);
 		((t_open_fd *)use_fd->content)->fd = fd;
 		((t_open_fd *)use_fd->content)->size = 0;
@@ -49,8 +49,8 @@ int		get_next_line(int fd, char **line)
 	if ((return_value = get_next_line_core(use_fd->content, line)) <= 0)
 	{
 		if (((t_open_fd *)use_fd->content)->over != NULL)
-			free(((t_open_fd *)use_fd->content)->over);
-		ft_lstremove_link(&fd_list, use_fd, free);
+			ft_managed_free(((t_open_fd *)use_fd->content)->over);
+		ft_lstremove_link(&fd_list, use_fd, ft_managed_free);
 	}
 	return (return_value);
 }
@@ -80,10 +80,10 @@ int		get_next_line_core(t_open_fd *context, char **line)
 	if (context->fd < 0 || line == NULL)
 		return (-1);
 	segment_list = NULL;
-	if (!(buffer = (char *)malloc((BUFFER_SIZE) * sizeof(char))))
+	if (!(buffer = (char *)ft_managed_malloc((BUFFER_SIZE) * sizeof(char))))
 		return (-1);
 	return_value = ft_reads_line(context, buffer, &segment_list);
-	free(buffer);
+	ft_managed_free(buffer);
 	if (context->size > 0)
 	{
 		i = 0;
@@ -124,7 +124,7 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 			return (-2);
 		if (context->size == 0)
 		{
-			free(context->over);
+			ft_managed_free(context->over);
 			context->over = NULL;
 		}
 	}
@@ -163,7 +163,7 @@ ssize_t	ft_add_line_segment(t_list **list, char *str, size_t str_size)
 	size = 0;
 	while (size < str_size && str[size] != '\n')
 		size++;
-	if (!(segment = (char *)malloc(size * sizeof(char))))
+	if (!(segment = (char *)ft_managed_malloc(size * sizeof(char))))
 		return (-1);
 	while (y < str_size)
 	{

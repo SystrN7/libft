@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:34:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:01 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:30:31 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*flag_pars_zero(char **start, t_list **flags)
 	if (**start == '0')
 	{
 		(*start)++;
-		if (!(value = malloc(sizeof(t_boolean))))
+		if (!(value = ft_managed_malloc(sizeof(t_boolean))))
 			return (NULL);
 		*value = TRUE;
 	}
@@ -51,7 +51,7 @@ char	*format_zero(char *indicator, char *convert, t_list *flg)
 				apply_flag = insert_zero(convert, 1, length - 1, zero_count);
 		if (convert == apply_flag)
 			apply_flag = insert_zero(convert, 0, length, zero_count);
-		free(convert);
+		ft_managed_free(convert);
 	}
 	return (apply_flag);
 }

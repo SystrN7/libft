@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:41:58 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:08:59 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:33:18 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static char			**ft_split_core(char ***tab, char const *s, char c)
 				sub_str_lenght++;
 				s++;
 			}
-			if (!((*tab)[i] = malloc((sub_str_lenght + 1) * sizeof(char))))
+			if (!((*tab)[i] = ft_managed_malloc((sub_str_lenght + 1))))
 				return (NULL);
 			ft_strlcpy((*tab)[i++], s - sub_str_lenght, (sub_str_lenght + 1));
 		}
@@ -72,8 +72,8 @@ char				**ft_split(char const *s, char c)
 		{
 			i = 0;
 			while (tab[i] != NULL || tab[i] != 0)
-				free(tab[i++]);
-			free(tab);
+				ft_managed_free(tab[i++]);
+			ft_managed_free(tab);
 		}
 		return (NULL);
 	}

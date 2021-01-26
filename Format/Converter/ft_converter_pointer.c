@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 13:40:02 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:28 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:29:58 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	converter_pointer(va_list args, t_list *flags, t_ba *r)
 		if (!(hexa_conv = ft_base_ulltostr(number, "0123456789abcdef")))
 			return ;
 	converted = ft_strjoin("0x", hexa_conv);
-	free(hexa_conv);
+	ft_managed_free(hexa_conv);
 	if (!converted)
 		return ;
 	converted = format_less("%", converted, flags);

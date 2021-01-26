@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 11:25:50 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:11 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:30:20 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*flag_pars_less(char **start, t_list **flags)
 	if (**start == '-')
 	{
 		(*start)++;
-		if (!(value = malloc(sizeof(t_boolean))))
+		if (!(value = ft_managed_malloc(sizeof(t_boolean))))
 			return (NULL);
 		*value = TRUE;
 	}
@@ -44,12 +44,12 @@ char	*format_less(char *indicator, char *converted, t_list *param)
 			length = 1;
 		if (*field_size < length)
 			return (converted);
-		if (!(apply_flag = malloc((*field_size + 1) * sizeof(char))))
+		if (!(apply_flag = ft_managed_malloc((*field_size + 1) * sizeof(char))))
 			return (NULL);
 		ft_memset(apply_flag + length, ' ', *field_size - length);
 		ft_memcpy(apply_flag, converted, length);
 		apply_flag[*field_size] = '\0';
-		free(converted);
+		ft_managed_free(converted);
 		return (apply_flag);
 	}
 	return (converted);

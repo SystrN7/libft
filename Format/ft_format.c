@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:14:21 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:48 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:31:44 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_format(const char *format, va_list args, char **buffer)
 	if ((buffer_size = ft_lstmerge_segment(segments, buffer)) < 0)
 		return (MERGE_ERROR);
 	ft_lstclear(&segments, ft_lstdel_array_segment);
-	ft_lstclear(&parsed_args, free);
+	ft_lstclear(&parsed_args, ft_managed_free);
 	return (buffer_size);
 }
 
@@ -68,11 +68,11 @@ t_ba	*ft_format_inter_args(char *cursor)
 	cursor_prev = cursor;
 	if (!(cursor = ft_strchr(cursor, '%')))
 		cursor = cursor_prev + ft_strlen(cursor_prev);
-	if (!(segment = malloc(sizeof(t_bytes_array))))
+	if (!(segment = ft_managed_malloc(sizeof(t_bytes_array))))
 		return (NULL);
 	if (!(segment->array = ft_substr(cursor_prev, 0, cursor - cursor_prev)))
 	{
-		free(segment);
+		ft_managed_free(segment);
 		return (NULL);
 	}
 	segment->size = ft_strlen(segment->array);

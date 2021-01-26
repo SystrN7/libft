@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 12:47:02 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:14 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/25 10:30:17 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*flag_pars_fs(char **start, t_list **flags)
 	if (ft_isdigit(**start))
 	{
 		*start += ft_strtoll(*start, &number);
-		if (!(value = malloc(sizeof(int))))
+		if (!(value = ft_managed_malloc(sizeof(int))))
 			return (NULL);
 		*value = (int)number;
 	}
@@ -49,11 +49,11 @@ char	*format_fs(char *indicator, char *converted, t_list *param)
 		length = 1;
 	if (*field_size < length)
 		return (converted);
-	if (!(apply_flag = malloc((*field_size + 1) * sizeof(char))))
+	if (!(apply_flag = ft_managed_malloc((*field_size + 1) * sizeof(char))))
 		return (NULL);
 	ft_memset(apply_flag, ' ', *field_size - length);
 	ft_memcpy(apply_flag + (*field_size - length), converted, length);
 	apply_flag[*field_size] = '\0';
-	free(converted);
+	ft_managed_free(converted);
 	return (apply_flag);
 }
