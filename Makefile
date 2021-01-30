@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/01/26 11:44:09 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/01/30 14:42:01 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/Associative/ft_lst_associative_get.c \
 				List/Associative/ft_lst_get_associative.c \
 				List/Associative/ft_lst_associative_del.c \
+				List/Associative/ft_lst_associative_del_free.c \
 				List/BytesArray/ft_lstadd_array_segment.c \
 				List/BytesArray/ft_lstmerge_segment.c \
 				List/BytesArray/ft_lstdel_array_segment.c \

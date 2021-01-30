@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 16:34:57 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 16:27:48 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,9 +173,13 @@ t_list	*ft_lst_sort(t_list *list, t_boolean (*is_sort)(void *, void *));
 */
 
 t_list	*ft_lst_associative_set(t_list **list, char *key, void *value);
-void	*ft_lst_associative_get(const t_list *list, char *key);
-void	ft_lst_associative_del(void *to_del);
-void	*ft_lst_get_associative(const t_list *list, char *key);
+
+t_list	*ft_lst_get_associative_link(const t_list *list, const char *key);
+t_asso	*ft_lst_get_associative(const t_list *list, const char *key);
+void	*ft_lst_associative_get(const t_list *list, const char *key);
+
+void	ft_lst_associative_del(t_associative *to_del, void (*del)(void *));
+void	ft_lst_associative_del_free(void *to_del);
 
 /*
 ** -----------------------------------------------------------------------------

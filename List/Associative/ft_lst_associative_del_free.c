@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_associative_del.c                           :+:      :+:    :+:   */
+/*   ft_lst_associative_del_free.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 14:49:10 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 16:20:06 by fgalaup          ###   ########lyon.fr   */
+/*   Created: 2021/01/30 14:37:08 by fgalaup           #+#    #+#             */
+/*   Updated: 2021/01/30 16:17:28 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lst_associative_del(t_associative *to_del, void (*del)(void *))
+void	ft_lst_associative_del_free(void *to_del)
 {
 	if (to_del == NULL)
 		return ;
-	if ((to_del->value != NULL) && (del))
-		del(to_del->value);
+	if (((t_associative*)to_del)->value != NULL)
+		ft_managed_free(((t_associative*)to_del)->value);
 	ft_managed_free(to_del);
 }

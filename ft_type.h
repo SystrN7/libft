@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/26 11:21:33 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 13:35:05 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ typedef struct		s_associative
 	char			*key;
 	void			*value;
 }					t_associative;
+
+typedef t_associative	t_asso;
 
 /*
 ** =============================================================================

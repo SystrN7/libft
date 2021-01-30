@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:48:51 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:43:41 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 14:41:05 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ ssize_t	ft_format_parse_one(char *start, va_list args, t_format_arg *convert)
 		return (-1);
 	convert->parsed_size = i;
 	convert->converted = converted_arg;
-	ft_lstclear(&flags, ft_lst_associative_del);
+	ft_lstclear(&flags, ft_lst_associative_del_free);
 	return (i);
 }
 
