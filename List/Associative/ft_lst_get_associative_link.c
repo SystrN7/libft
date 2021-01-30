@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_associative_get.c                           :+:      :+:    :+:   */
+/*   ft_lst_get_associative_link.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 13:06:52 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 14:04:58 by fgalaup          ###   ########lyon.fr   */
+/*   Created: 2021/01/30 13:25:40 by fgalaup           #+#    #+#             */
+/*   Updated: 2021/01/30 17:00:55 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Function : ft_lst_associative_get
-** Decription : return the value associative to key in the associative list
+** Function : ft_lst_get_associative_link
+** Decription : search in associative list the link
+** with the same key given to the function
+** and return the pointer to link contain associative structure.
 ** Parameter :
 ** 	-	(list *) list :The address of the first element of associative list.
 ** 	-	(string) key of the element to search in the list
 **
 ** Return (int)
-** 	-	(void *) : value for given key
+** 	-	(t_list *) : The link of the associative
 */
 
-void	*ft_lst_associative_get(const t_list *list, const char *key)
+t_list	*ft_lst_get_associative_link(const t_list *list, const char *key)
 {
-	return (ft_lst_get_associative(list, key)->value);
+	t_list			*it;
+
+	it = (t_list*)list;
+	while (it)
+	{
+		if (key == ((t_associative*)it->content)->key)
+			return (it);
+		if (!ft_strncmp(key, ((t_associative*)it->content)->key, 72))
+			return (it);
+		it = it->next;
+	}
+	return (NULL);
 }

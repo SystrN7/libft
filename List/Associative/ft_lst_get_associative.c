@@ -6,24 +6,26 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 14:09:27 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:10:51 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/01/30 13:59:59 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_lst_get_associative(const t_list *list, char *key)
-{
-	t_list			*it;
-	t_associative	*element;
+/*
+** Function : ft_lst_get_associative
+** Decription : search in associative list the link
+** with the same key given to the function
+** and return the pointer to the find associative stucture.
+** Parameter :
+** 	-	(list *) list :The address of the first element of associative list.
+** 	-	(string) key of the element to search in the list
+**
+** Return (int)
+** 	-	(t_associative *) : content of t_list
+*/
 
-	it = (t_list*)list;
-	while (it)
-	{
-		element = (t_associative*)it->content;
-		if (!ft_strncmp(key, element->key, 76))
-			return (element);
-		it = it->next;
-	}
-	return (NULL);
+t_associative	*ft_lst_get_associative(const t_list *list, const char *key)
+{
+	return (ft_lst_get_associative_link(list, key)->content);
 }
