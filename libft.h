@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 16:27:48 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 11:18:51 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_nothing(void *address);
-void	ft_free2d(void **address);
+
+void	ft_2d_free(void **address);
+size_t	ft_2d_count(void **array);
 
 t_list	**ft_managed_get_malloc_list(void);
 void	*ft_managed_malloc(size_t size);
@@ -85,10 +87,12 @@ int		ft_tolower(int c);
 */
 
 size_t	ft_strlen(const char *s);
+
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *str, const char *find, size_t len);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strdup(const char *s1);
@@ -98,6 +102,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strformat(char **result, const char *format, ...);
+
+char	*ft_2d_merge(char **array);
 
 /*
 ** =============================================================================
@@ -178,6 +184,7 @@ t_list	*ft_lst_get_associative_link(const t_list *list, const char *key);
 t_asso	*ft_lst_get_associative(const t_list *list, const char *key);
 void	*ft_lst_associative_get(const t_list *list, const char *key);
 
+void	ft_lst_associative_remove(t_list **lst, char *key, void (*del)(void *));
 void	ft_lst_associative_del(t_associative *to_del, void (*del)(void *));
 void	ft_lst_associative_del_free(void *to_del);
 

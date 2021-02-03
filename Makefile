@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/01/30 16:36:24 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/02/03 11:21:37 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				Memory/ft_memchr.c \
 				Memory/ft_memcmp.c \
 				Memory/ft_nothing.c \
-				Memory/ft_free2d.c \
+				Memory/ft_2d_free.c \
+				Memory/ft_2d_count.c \
 				Memory/Manager/ft_manager.c \
 				Memory/Manager/ft_malloc.c \
 				Memory/Manager/ft_free.c \
@@ -59,6 +60,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				String/ft_strtrim.c \
 				String/ft_strmapi.c \
 				String/ft_strformat.c \
+				String/ft_2d_merge.c \
 				File/get_next_line.c \
 				File/ft_file_get_extention.c \
 				File/ft_printf_fd.c \
@@ -86,6 +88,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/Associative/ft_lst_get_associative_link.c \
 				List/Associative/ft_lst_associative_del.c \
 				List/Associative/ft_lst_associative_del_free.c \
+				List/Associative/ft_lst_associative_remove.c \
 				List/BytesArray/ft_lstadd_array_segment.c \
 				List/BytesArray/ft_lstmerge_segment.c \
 				List/BytesArray/ft_lstdel_array_segment.c \

@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free2d.c                                        :+:      :+:    :+:   */
+/*   ft_2d_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 10:28:01 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:31:05 by fgalaup          ###   ########lyon.fr   */
+/*   Created: 2021/02/03 11:01:07 by fgalaup           #+#    #+#             */
+/*   Updated: 2021/02/03 11:12:22 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free2d(void **address)
+size_t	ft_2d_count(void **array)
 {
-	if (address)
-		while (*address)
-			ft_managed_free(*(address++));
+	size_t	size;
+
+	size = 0;
+	while (array[size])
+		size++;
+	return (size);
 }
