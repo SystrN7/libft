@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:32:01 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/26 13:03:35 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/02/01 14:11:25 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	ft_managed_free(void *ptr)
 	}
 	if (it != NULL)
 		ft_lstremove_link(lst_malloc, it, free);
-	else
-		free(ptr);
 }
 
 /*

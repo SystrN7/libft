@@ -1,11 +1,19 @@
 Revoir la structure des ficher
 
+function a ajouter :
+	- ft_2d_merge
+	- ft_2d_count
+	- ft_lst_associative_remove
+
+fonction a renomer :
+	- ft_free2d => ft_2d_free
+
 Refacotiser :
 	- Unifier le nomage des variable
+	- unifier le nomage des function (list)
 
 Coder plus proprement :
 	- split
-	- putnbr
 
 Autres fonctions cool :
 	str(c)spn
