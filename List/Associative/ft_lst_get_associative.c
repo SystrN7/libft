@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 14:09:27 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 13:59:59 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 11:52:15 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,10 @@
 
 t_associative	*ft_lst_get_associative(const t_list *list, const char *key)
 {
-	return (ft_lst_get_associative_link(list, key)->content);
+	t_list	*link;
+
+	link = ft_lst_get_associative_link(list, key);
+	if (link != NULL)
+		return (link->content);
+	return (NULL);
 }
