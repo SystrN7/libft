@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/02/03 11:18:51 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/02/03 12:03:47 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,7 +184,7 @@ t_list	*ft_lst_get_associative_link(const t_list *list, const char *key);
 t_asso	*ft_lst_get_associative(const t_list *list, const char *key);
 void	*ft_lst_associative_get(const t_list *list, const char *key);
 
-void	ft_lst_associative_remove(t_list **lst, char *key, void (*del)(void *));
+t_bool	ft_lst_associative_remove(t_list **lst, char *key, void (*del)(void *));
 void	ft_lst_associative_del(t_associative *to_del, void (*del)(void *));
 void	ft_lst_associative_del_free(void *to_del);
 
