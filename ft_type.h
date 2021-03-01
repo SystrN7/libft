@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 13:35:05 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/01 14:37:39 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,23 @@ typedef void				(*t_ftermination)(void *);
 typedef t_ftermination		t_term;
 
 /*
+** Enum Name: e_standard_file_descriptor
+** Description : This Enum contain standard file descriptor identifier
+**	used by file libc function.
+** Possible Value :
+**	-	standard_input = 0 : Identifer for read file descriptor
+**	-	standard_output = 1 : Identifer for write file descriptor
+**	-	standard_error = 2 : Identifer for error write file descriptor
+*/
+
+enum						e_standard_file_descriptor
+{
+	standard_input = 0,
+	standard_output = 1,
+	standard_error = 2,
+};
+
+/*
 ** Type Name: t_boolean
 ** Description : This type contain a boolean value the posible value as contain
 ** 		in enumaration e_boolean
@@ -37,25 +54,25 @@ typedef t_ftermination		t_term;
 ** 	-	(FALSE) = 0 : The condition is false
 */
 
-enum				e_boolean
+enum						e_boolean
 {
 	FALSE = 0,
 	TRUE
 };
-typedef char		t_boolean;
-typedef t_boolean		t_bool;
+typedef char				t_boolean;
+typedef t_boolean			t_bool;
 
 /*
 ** Type Name: t_byte
 ** Description : Better name for non char data
 */
-typedef char		t_byte;
+typedef char				t_byte;
 
 /*
 ** Type Name: t_bytes
 ** Description : Better name for generic bytes array
 */
-typedef t_byte*		t_bytes;
+typedef t_byte*				t_bytes;
 
 /*
 ** =============================================================================
@@ -71,11 +88,11 @@ typedef t_byte*		t_bytes;
 ** 	-	(s_list*) next : The address of next element of the list.
 */
 
-typedef struct		s_list
+typedef struct				s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}							t_list;
 
 /*
 ** Type Name: t_bytes_array
@@ -85,11 +102,11 @@ typedef struct		s_list
 **	-	(size) size : The size of array (number of element).
 ** 	-	(byte*) array : The array.
 */
-typedef struct		s_bytes_array
+typedef struct				s_bytes_array
 {
-	size_t			size;
-	char			*array;
-}					t_bytes_array;
+	size_t	size;
+	char	*array;
+}							t_bytes_array;
 
 /*
 ** Type Name: t_associative
@@ -101,13 +118,33 @@ typedef struct		s_bytes_array
 **	NOTE : The is never free by a function of libft (Use static element)
 */
 
-typedef struct		s_associative
+typedef struct				s_associative
 {
-	char			*key;
-	void			*value;
-}					t_associative;
+	char	*key;
+	void	*value;
+}							t_associative;
 
-typedef t_associative	t_asso;
+typedef t_associative		t_asso;
+
+/*
+** Type Name: t_node_binary
+** Description : This structure describe node of binary tree.
+** Vars :
+**	-	(void*) value : The value of to store in the node of binary tree.
+**	-	(t_node_binary*) right : the right branch of binary tree
+** 		If null id the end dont have children node on this side.
+**	-	(t_node_binary*) left : the left branch of binary tree
+**	-	If null id the end dont have children node on this side.
+*/
+
+typedef struct				s_node_binary
+{
+	void					*value;
+	struct s_node_binary	*right;
+	struct s_node_binary	*left;
+}							t_node_binary;
+
+typedef t_node_binary		t_bnode;
 
 /*
 ** =============================================================================
@@ -124,11 +161,11 @@ typedef t_associative	t_asso;
 ** 	-	double y : The value for the axis of Y-axis (???).
 */
 
-typedef struct		s_xy
+typedef struct				s_xy
 {
-	double			x;
-	double			y;
-}					t_xy;
+	double	x;
+	double	y;
+}							t_xy;
 
 /*
 ** Type Name: t_xy
@@ -138,11 +175,11 @@ typedef struct		s_xy
 ** 	-	int y : The value for the axis of Y-axis (???).
 */
 
-typedef struct		s_pos
+typedef struct				s_pos
 {
-	int			x;
-	int			y;
-}					t_pos;
+	int		x;
+	int		y;
+}							t_pos;
 
 /*
 ** =============================================================================
@@ -160,11 +197,11 @@ typedef struct		s_pos
 **	-	(char *) over : The unreturned content.
 */
 
-typedef struct		s_open_fd
+typedef struct				s_open_fd
 {
-	int				fd;
-	ssize_t			size;
-	char			*over;
-}					t_open_fd;
+	int			fd;
+	ssize_t		size;
+	char		*over;
+}							t_open_fd;
 
 #endif
