@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/02/03 11:21:37 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/02/04 14:57:33 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,10 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/ft_lstmap.c \
 				List/ft_lstmerge_str_segments.c \
 				List/ft_lstmerge_2d.c \
+				List/ft_lst_sort.c \
+				List/BytesArray/ft_lstadd_array_segment.c \
+				List/BytesArray/ft_lstmerge_segment.c \
+				List/BytesArray/ft_lstdel_array_segment.c \
 				List/Associative/ft_lst_associative_set.c \
 				List/Associative/ft_lst_associative_get.c \
 				List/Associative/ft_lst_get_associative.c \
@@ -89,10 +93,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				List/Associative/ft_lst_associative_del.c \
 				List/Associative/ft_lst_associative_del_free.c \
 				List/Associative/ft_lst_associative_remove.c \
-				List/BytesArray/ft_lstadd_array_segment.c \
-				List/BytesArray/ft_lstmerge_segment.c \
-				List/BytesArray/ft_lstdel_array_segment.c \
-				List/ft_lst_sort.c \
+				List/BinaryTree/ft_binarytree_node_create.c \
 				Format/ft_parser.c \
 				Format/ft_format.c \
 				Format/ft_flags.c \
