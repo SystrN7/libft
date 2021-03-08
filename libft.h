@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/06 11:14:44 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/06 11:15:48 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	*ft_managed_malloc(size_t size);
 void	ft_managed_free(void *ptr);
 void	ft_managed_free_all(void);
 t_term	ft_managed_termination_function(t_ftermination f);
+void	*ft_managed_termination_params(void *params);
 
 /*
 ** =============================================================================
