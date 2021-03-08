@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/03/05 16:56:23 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/03/08 14:03:43 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ LIB_SRCS	=	Memory/ft_calloc.c \
 				String/ft_split.c \
 				String/ft_strtrim.c \
 				String/ft_striter.c \
+				String/ft_strtest.c \
 				String/ft_strmapi.c \
 				String/ft_strformat.c \
 				String/ft_2d_merge.c \
