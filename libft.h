@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/08 12:58:37 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/11 16:20:08 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_strsplit_last(const char *string, int separator);
 
 t_bool	ft_strtest(const char *string, int (*f)(int));
 char	*ft_striter(char *string, int (*f)(int));
