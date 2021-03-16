@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 14:58:32 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:13:22 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 18:25:28 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int		ft_printf(const char *format, ...);
 
 int		ft_format(const char *format, va_list args, char **buffer);
 
-ssize_t	ft_format_parser(char *format, va_list args, t_list **format_segments);
-ssize_t	ft_format_parse_one(char *start, va_list args, t_format_arg *convert);
-ssize_t	ft_format_parse_flag(char *start, va_list args, t_list **flags);
+int		ft_format_parser(char *format, va_list args, t_list **format_segments);
+int		ft_format_parse_one(char *start, va_list args, t_format_arg *convert);
+int		ft_format_parse_flag(char *start, va_list args, t_list **flags);
 t_ba	*ft_format_convert(char *start, va_list args, t_list *flags);
 
 int		ft_format_formater(char *fmr, t_list *arg, t_list **seg);

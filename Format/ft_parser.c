@@ -6,16 +6,16 @@
 /*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:48:51 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 17:18:57 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 18:24:09 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_format.h"
 
-ssize_t	ft_format_parser(char *format, va_list args, t_list **converted)
+int	ft_format_parser(char *format, va_list args, t_list **converted)
 {
 	t_format_arg	*parsed_arg;
-	ssize_t			i;
+	int				i;
 
 	i = 0;
 	while (format[i] != '\0')
@@ -37,17 +37,18 @@ ssize_t	ft_format_parser(char *format, va_list args, t_list **converted)
 	return (1);
 }
 
-ssize_t	ft_format_parse_one(char *start, va_list args, t_format_arg *convert)
+int	ft_format_parse_one(char *start, va_list args, t_format_arg *convert)
 {
 	t_bytes_array	*converted_arg;
 	t_list			*flags;
-	ssize_t			r;
-	ssize_t			i;
+	int				r;
+	int				i;
 
+	r = 0;
 	i = 0;
 	flags = NULL;
 	i += (start[i] == '%');
-	while (ftn(r, ft_format_parse_flag((start + i), args, &flags)) > 0)
+	while (fti(&r, ft_format_parse_flag((start + i), args, &flags)) > 0)
 		i += r;
 	if (r == -1)
 		return (-1);
@@ -62,7 +63,7 @@ ssize_t	ft_format_parse_one(char *start, va_list args, t_format_arg *convert)
 	return (i);
 }
 
-ssize_t	ft_format_parse_flag(char *start, va_list args, t_list **flags)
+int	ft_format_parse_flag(char *start, va_list args, t_list **flags)
 {
 	t_format_flag	*it;
 	char			*cursor;
