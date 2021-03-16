@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmerge_segment.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 08:22:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:25:23 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:49:53 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 **	Parameter :
 **		-	(t_list) : The segment list to merge
 **		-	(char **) : varible to return the result
-**	Return (string)
+**	Return (number)
 **		-	number : The size of string resuting of concatenation
 **			of all sub string containe in segment_list
 **		-	-1 : If an error occurred memory reservation
 */
 
-ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str)
+int	ft_lstmerge_segment(t_list *segment_list, char **str)
 {
 	t_list	*it;
-	size_t	str_lenght;
-	size_t	i;
-	size_t	y;
+	int		str_lenght;
+	int		i;
+	int		y;
 
 	str_lenght = 0;
 	it = segment_list;
@@ -39,7 +39,8 @@ ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str)
 		str_lenght += ((t_bytes_array *)it->content)->size;
 		it = it->next;
 	}
-	if (!(*str = (char *)ft_managed_malloc((str_lenght + 1) * sizeof(char))))
+	*str = ft_managed_malloc((str_lenght + 1) * sizeof(char));
+	if (*str == NULL)
 		return (-1);
 	i = 0;
 	while (segment_list)

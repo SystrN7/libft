@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 12:41:58 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:33:18 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:49:20 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,68 +14,71 @@
 
 static unsigned int	ft_count_delimited(char const *string, char c)
 {
-	char			prev_is_del;
+	char			prev_is_delimiter;
 	unsigned int	seg_count;
 	unsigned int	i;
 
 	i = 0;
 	seg_count = 0;
-	prev_is_del = -1;
+	prev_is_delimiter = -1;
 	while (string[i])
+	{
 		if (string[i++] == c)
 		{
-			seg_count += (prev_is_del == 0 && i != 0) ? 1 : 0;
-			prev_is_del = 1;
+			seg_count += (prev_is_delimiter == 0 && i != 0);
+			prev_is_delimiter = 1;
 		}
 		else
-			prev_is_del = 0;
-	seg_count += (prev_is_del == 0) ? 1 : 0;
+			prev_is_delimiter = 0;
+	}
+	seg_count += (prev_is_delimiter == 0);
 	return (seg_count);
 }
 
-static char			**ft_split_core(char ***tab, char const *s, char c)
+static char	**ft_split_core(char ***array, char const *string, char c)
 {
 	unsigned int	sub_str_lenght;
 	unsigned int	i;
 
 	i = 0;
-	if (!(*tab = ft_calloc((ft_count_delimited(s, c) + 1), sizeof(char *))))
-		return (NULL);
-	while (s != NULL && *s)
-		if (*s != c)
+	while (string != NULL && *string)
+	{
+		if (*string != c)
 		{
 			sub_str_lenght = 0;
-			while (*s != c && *s)
+			while (*string != c && *string)
 			{
 				sub_str_lenght++;
-				s++;
+				string++;
 			}
-			if (!((*tab)[i] = ft_managed_malloc((sub_str_lenght + 1))))
+			(*array)[i] = ft_managed_malloc((sub_str_lenght + 1));
+			if ((*array)[i] == NULL)
 				return (NULL);
-			ft_strlcpy((*tab)[i++], s - sub_str_lenght, (sub_str_lenght + 1));
+			ft_strlcpy((*array)[i++], string - sub_str_lenght,
+				(sub_str_lenght + 1));
 		}
 		else
-			s++;
-	(*tab)[i] = NULL;
-	return (*tab);
+			string++;
+	}
+	(*array)[i] = NULL;
+	return (*array);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *string, char c)
 {
-	char	**tab;
+	char	**array;
 	int		i;
 
-	tab = NULL;
-	if (ft_split_core(&tab, s, c) == NULL)
+	array = ft_calloc((ft_count_delimited(string, c) + 1), sizeof(char *));
+	if (!array)
+		return (NULL);
+	if (ft_split_core(&array, string, c) == NULL)
 	{
-		if (tab != NULL)
-		{
-			i = 0;
-			while (tab[i] != NULL || tab[i] != 0)
-				ft_managed_free(tab[i++]);
-			ft_managed_free(tab);
-		}
+		i = 0;
+		while (array[i] != NULL || array[i] != 0)
+			ft_managed_free(array[i++]);
+		ft_managed_free(array);
 		return (NULL);
 	}
-	return (tab);
+	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:03:45 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:28:59 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 12:34:24 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 char	*ft_ulltostr(unsigned long long number)
 {
 	int		i;
-	char	*str;
+	char	*string;
 	int		digits;
 
 	digits = ft_count_udigits(number);
-	if (!(str = ft_managed_malloc((digits + 1) * sizeof(char))))
+	string = ft_managed_malloc((digits + 1) * sizeof(char));
+	if (!string)
 		return (NULL);
 	i = digits;
 	while (i)
 	{
-		str[--i] = (number % 10) + '0';
+		string[--i] = (number % 10) + '0';
 		number /= 10;
 	}
-	str[digits] = '\0';
-	return (str);
+	string[digits] = '\0';
+	return (string);
 }

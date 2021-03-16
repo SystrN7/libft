@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strformat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 16:39:13 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:08:39 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:33:34 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strformat(char **result, const char *format, ...)
+int	ft_strformat(char **result, const char *format, ...)
 {
 	va_list	args;
 	int		size;

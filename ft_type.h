@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/01 14:37:39 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 12:31:29 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef t_byte*				t_bytes;
 ** 	-	(s_list*) next : The address of next element of the list.
 */
 
-typedef struct				s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -102,9 +102,9 @@ typedef struct				s_list
 **	-	(size) size : The size of array (number of element).
 ** 	-	(byte*) array : The array.
 */
-typedef struct				s_bytes_array
+typedef struct s_bytes_array
 {
-	size_t	size;
+	int		size;
 	char	*array;
 }							t_bytes_array;
 
@@ -118,7 +118,7 @@ typedef struct				s_bytes_array
 **	NOTE : The is never free by a function of libft (Use static element)
 */
 
-typedef struct				s_associative
+typedef struct s_associative
 {
 	char	*key;
 	void	*value;
@@ -137,7 +137,7 @@ typedef t_associative		t_asso;
 **	-	If null id the end dont have children node on this side.
 */
 
-typedef struct				s_node_binary
+typedef struct s_node_binary
 {
 	void					*value;
 	struct s_node_binary	*right;
@@ -161,7 +161,7 @@ typedef t_node_binary		t_bnode;
 ** 	-	double y : The value for the axis of Y-axis (???).
 */
 
-typedef struct				s_xy
+typedef struct s_xy
 {
 	double	x;
 	double	y;
@@ -175,7 +175,7 @@ typedef struct				s_xy
 ** 	-	int y : The value for the axis of Y-axis (???).
 */
 
-typedef struct				s_pos
+typedef struct s_pos
 {
 	int		x;
 	int		y;
@@ -197,10 +197,10 @@ typedef struct				s_pos
 **	-	(char *) over : The unreturned content.
 */
 
-typedef struct				s_open_fd
+typedef struct s_open_fd
 {
 	int			fd;
-	ssize_t		size;
+	int			size;
 	char		*over;
 }							t_open_fd;
 

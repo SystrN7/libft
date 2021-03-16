@@ -6,17 +6,17 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 15:49:42 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:07:28 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 12:22:53 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int number;
-	int sign;
-	int i;
+	int	number;
+	int	sign;
+	int	i;
 
 	i = 0;
 	sign = 1;

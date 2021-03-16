@@ -3,16 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
+#    By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/03/11 16:15:52 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/03/16 11:34:40 by felix            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Project vars
-LIB_SRCS	=	Memory/ft_calloc.c \
+LIB_SRCS	=	Norme/ft_ternary.c \
+				Norme/ft_n.c \
+				Memory/ft_calloc.c \
 				Memory/ft_memdup.c \
 				Memory/ft_memset.c \
 				Memory/ft_bzero.c \

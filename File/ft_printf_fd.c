@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 14:27:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:29:43 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:43:42 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 **		-	-1 : If an error occurred during the char printing ;
 */
 
-int		ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	char	*buffer;
@@ -42,7 +42,7 @@ int		ft_printf(const char *format, ...)
 	return (size);
 }
 
-int		ft_printf_fd(int fd, const char *format, ...)
+int	ft_printf_fd(int fd, const char *format, ...)
 {
 	va_list	args;
 	char	*buffer;

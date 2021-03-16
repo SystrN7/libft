@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_less.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 11:25:50 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:30:20 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:42:20 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*flag_pars_less(char **start, t_list **flags)
 	if (**start == '-')
 	{
 		(*start)++;
-		if (!(value = ft_managed_malloc(sizeof(t_boolean))))
+		value = ft_managed_malloc(sizeof(t_boolean));
+		if (value == NULL)
 			return (NULL);
 		*value = TRUE;
 	}
@@ -44,7 +45,8 @@ char	*format_less(char *indicator, char *converted, t_list *param)
 			length = 1;
 		if (*field_size < length)
 			return (converted);
-		if (!(apply_flag = ft_managed_malloc((*field_size + 1) * sizeof(char))))
+		apply_flag = ft_managed_malloc((*field_size + 1) * sizeof(char));
+		if (apply_flag == NULL)
 			return (NULL);
 		ft_memset(apply_flag + length, ' ', *field_size - length);
 		ft_memcpy(apply_flag, converted, length);

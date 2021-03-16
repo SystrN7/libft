@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_absolute.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 13:50:51 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:10:24 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:02:46 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 
 size_t	ft_absolute_ll(long number)
 {
-	return ((number < 0) ? -number : number);
+	if (number < 0)
+		number = -number;
+	return (number);
 }
 
 /*
@@ -33,7 +35,9 @@ size_t	ft_absolute_ll(long number)
 
 size_t	ft_abs(long long number)
 {
-	return ((number < 0) ? -number : number);
+	if (number < 0)
+		number = -number;
+	return (number);
 }
 
 /*
@@ -47,7 +51,9 @@ size_t	ft_abs(long long number)
 
 double	ft_absolute_f(double number)
 {
-	return ((number < 0) ? -number : number);
+	if (number < 0)
+		number = -number;
+	return (number);
 }
 
 /*
@@ -57,5 +63,7 @@ double	ft_absolute_f(double number)
 
 double	ft_absf(double number)
 {
-	return ((number < 0) ? -number : number);
+	if (number < 0)
+		number = -number;
+	return (number);
 }

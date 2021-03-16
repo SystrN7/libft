@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 08:58:08 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:13:25 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 12:19:56 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 typedef t_bytes_array	t_ba;
 typedef void			(*t_converter)(va_list args, t_list *flags, t_ba *seg);
-typedef void			*(*t_flags_parser)(char **start, t_list **flags);
+typedef void*			(*t_flags_parser)(char **start, t_list **flags);
 
-typedef struct			s_format_arg
+typedef struct s_format_arg
 {
 	t_bytes_array		*converted;
 	size_t				parsed_size;
@@ -35,7 +35,7 @@ typedef struct			s_format_arg
 **		Function to convert an type to a string
 */
 
-typedef struct			s_format_converter
+typedef struct s_format_converter
 {
 	char				*indicator;
 	t_converter			ft_converter;
@@ -53,7 +53,7 @@ typedef struct			s_format_converter
 **		This function format the converter args
 */
 
-typedef struct			s_format_flag
+typedef struct s_format_flag
 {
 	char				*flag;
 	t_flags_parser		ft_flags_parser;

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_ternary.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 17:23:59 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 16:52:44 by felix            ###   ########lyon.fr   */
+/*   Created: 2021/03/16 11:23:12 by felix             #+#    #+#             */
+/*   Updated: 2021/03/16 14:47:04 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *source, char (*f)(unsigned int, char))
+void	*ft_tern_pt(t_bool condition, void *pt1, void *pt2)
 {
-	unsigned int	i;
-	unsigned int	string_lenght;
-	char			*string;
+	if (condition)
+		return (pt1);
+	return (pt2);
+}
 
-	string_lenght = ft_strlen(source);
-	string = ft_managed_malloc((string_lenght + 1) * sizeof(char));
-	if (string == NULL)
-		return (NULL);
-	string[string_lenght] = '\0';
-	i = 0;
-	if (source != NULL)
-	{
-		while (i < string_lenght)
-		{
-			string[i] = f(i, source[i]);
-			i++;
-		}
-	}
-	return (string);
+int	ft_tern_nu(t_bool condition, int value1, int value2)
+{
+	if (condition)
+		return (value1);
+	return (value2);
 }

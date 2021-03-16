@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_n.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 17:23:59 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 16:52:44 by felix            ###   ########lyon.fr   */
+/*   Created: 2021/03/16 11:37:11 by felix             #+#    #+#             */
+/*   Updated: 2021/03/16 15:19:26 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *source, char (*f)(unsigned int, char))
+// Fuck the norm
+void	*ftn(void **dest, void *src)
 {
-	unsigned int	i;
-	unsigned int	string_lenght;
-	char			*string;
+	*dest = src;
+	return (dest);
+}
 
-	string_lenght = ft_strlen(source);
-	string = ft_managed_malloc((string_lenght + 1) * sizeof(char));
-	if (string == NULL)
-		return (NULL);
-	string[string_lenght] = '\0';
-	i = 0;
-	if (source != NULL)
-	{
-		while (i < string_lenght)
-		{
-			string[i] = f(i, source[i]);
-			i++;
-		}
-	}
-	return (string);
+// Fuck the paris
+int	fti(int *dest, int src)
+{
+	*dest = src;
+	return (*dest);
 }

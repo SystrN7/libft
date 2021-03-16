@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_converter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 08:27:45 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:54 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 11:41:58 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_format_converter	*ft_modular_converter(void)
 {
-	static t_format_converter converters[10];
+	static t_format_converter	converters[10];
 
 	converters[0].indicator = "%";
 	converters[1].indicator = "c";

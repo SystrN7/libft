@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 11:06:37 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:11:45 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:06:12 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *elem_to_del_next;
-	t_list *elem_to_del;
+	t_list	*elem_to_del_next;
+	t_list	*elem_to_del;
 
 	if (lst == NULL || *lst == NULL)
 		return ;

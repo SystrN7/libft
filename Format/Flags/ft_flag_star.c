@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_star.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:23:24 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:26:59 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:43:19 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	*flag_pars_star(char **start, va_list args, t_list **flags)
 
 	if (**start == '*')
 	{
-		if (!(value = ft_managed_malloc(sizeof(int))))
+		value = ft_managed_malloc(sizeof(int));
+		if (value == NULL)
 			return (NULL);
 		if (*(*start - 1) == '.')
 		{
@@ -36,11 +37,12 @@ void	*flag_pars_star(char **start, va_list args, t_list **flags)
 	return (NULL);
 }
 
-int		ft_set_fs(t_list **flags, int *size, int size_zero, t_boolean less)
+int	ft_set_fs(t_list **flags, int *size, int size_zero, t_boolean less)
 {
 	t_boolean	*status;
 
-	if (!(status = ft_managed_malloc(sizeof(t_boolean))))
+	status = ft_managed_malloc(sizeof(t_boolean));
+	if (status == NULL)
 		return (-1);
 	*status = less;
 	if (size_zero)
@@ -50,7 +52,7 @@ int		ft_set_fs(t_list **flags, int *size, int size_zero, t_boolean less)
 	return (0);
 }
 
-int		format_star(va_list args, t_list **flags, int affected)
+int	format_star(va_list args, t_list **flags, int affected)
 {
 	int			value;
 	int			*size;
@@ -58,9 +60,10 @@ int		format_star(va_list args, t_list **flags, int affected)
 	value = (int)va_arg(args, int);
 	if (ft_lst_associative_get(*flags, "fs") && value < 0)
 		return (0);
-	if (!(size = ft_managed_malloc(sizeof(int))))
+	size = ft_managed_malloc(sizeof(int));
+	if (size == NULL)
 		return (-1);
-	*size = (value < 0) ? -value : value;
+	*size = ft_abs(value);
 	if (value < 0)
 	{
 		if (affected == FLAG_STAR_DOT)

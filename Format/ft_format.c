@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:14:21 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:31:44 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:21:32 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_format.h"
 
-int		ft_format(const char *format, va_list args, char **buffer)
+int	ft_format(const char *format, va_list args, char **buffer)
 {
 	t_list	*parsed_args;
 	t_list	*segments;
@@ -21,18 +21,21 @@ int		ft_format(const char *format, va_list args, char **buffer)
 
 	parsed_args = NULL;
 	segments = NULL;
-	if (!(code = ft_format_parser((char *)format, args, &parsed_args)))
+	code = ft_format_parser((char *)format, args, &parsed_args);
+	if (!(code))
 		return (code + PARSER_ERROR);
-	if ((code = ft_format_formater((char*)format, parsed_args, &segments)))
+	code = ft_format_formater((char *)format, parsed_args, &segments);
+	if ((code))
 		return (code + FORMATER_ERROR);
-	if ((buffer_size = ft_lstmerge_segment(segments, buffer)) < 0)
+	buffer_size = ft_lstmerge_segment(segments, buffer);
+	if (buffer_size < 0)
 		return (MERGE_ERROR);
 	ft_lstclear(&segments, ft_lstdel_array_segment);
 	ft_lstclear(&parsed_args, ft_managed_free);
 	return (buffer_size);
 }
 
-int		ft_format_formater(char *format, t_list *args, t_list **segments)
+int	ft_format_formater(char *format, t_list *args, t_list **segments)
 {
 	t_bytes_array	*segment;
 	char			*cursor;
@@ -50,7 +53,7 @@ int		ft_format_formater(char *format, t_list *args, t_list **segments)
 			cursor += ((t_format_arg*)args->content)->parsed_size;
 			args = args->next;
 		}
-		else if (!(segment = ft_format_inter_args(cursor)))
+		else if (!ftn((void **)&segment, ft_format_inter_args(cursor)))
 			return (FORMATER_ERROR_STR_FORMAT);
 		else
 			cursor += segment->size;
@@ -66,11 +69,14 @@ t_ba	*ft_format_inter_args(char *cursor)
 	t_bytes_array	*segment;
 
 	cursor_prev = cursor;
-	if (!(cursor = ft_strchr(cursor, '%')))
+	cursor = ft_strchr(cursor, '%');
+	if (!(cursor))
 		cursor = cursor_prev + ft_strlen(cursor_prev);
-	if (!(segment = ft_managed_malloc(sizeof(t_bytes_array))))
+	segment = ft_managed_malloc(sizeof(t_bytes_array));
+	if (!(segment))
 		return (NULL);
-	if (!(segment->array = ft_substr(cursor_prev, 0, cursor - cursor_prev)))
+	segment->array = ft_substr(cursor_prev, 0, cursor - cursor_prev);
+	if (!(segment->array))
 	{
 		ft_managed_free(segment);
 		return (NULL);

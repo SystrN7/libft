@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_converter_integer.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 09:55:42 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:33 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:20:54 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	converter_integer(va_list args, t_list *flags, t_ba *r)
 {
 	char	*converted;
 
-	if (!(converted = ft_lltostr((int)va_arg(args, int))))
+	converted = ft_lltostr((int)va_arg(args, int));
+	if (converted == NULL)
 		return ;
 	converted = format_zero("i", converted, flags);
 	converted = format_dot("i", converted, flags);

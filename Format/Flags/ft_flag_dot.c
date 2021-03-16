@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_dot.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 12:04:15 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:30:11 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:38:58 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_format.h"
 
-void		*flag_pars_dot(char **start, t_list **flags)
+void	*flag_pars_dot(char **start, t_list **flags)
 {
 	long long	number;
 	int			number_length;
@@ -26,7 +26,8 @@ void		*flag_pars_dot(char **start, t_list **flags)
 		(*start)++;
 		number_length = ft_strtoll(*start, &number);
 		*start += number_length;
-		if (!(value = ft_managed_malloc(sizeof(int))))
+		value = ft_managed_malloc(sizeof(int));
+		if (value == NULL)
 			return (NULL);
 		if (number_length == 0 && **start == '*')
 			*value = -1;
@@ -50,7 +51,7 @@ static void	*format_dot2(char *indicator, int precision, char *convert)
 	return (apply_flag);
 }
 
-char		*format_dot(char *indicator, char *convert, t_list *param)
+char	*format_dot(char *indicator, char *convert, t_list *param)
 {
 	char			*apply_flag;
 	int				length;

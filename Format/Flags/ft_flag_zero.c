@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_zero.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:34:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:30:31 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:44:18 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	*flag_pars_zero(char **start, t_list **flags)
 	if (**start == '0')
 	{
 		(*start)++;
-		if (!(value = ft_managed_malloc(sizeof(t_boolean))))
+		value = ft_managed_malloc(sizeof(t_boolean));
+		if (value == NULL)
 			return (NULL);
 		*value = TRUE;
 	}

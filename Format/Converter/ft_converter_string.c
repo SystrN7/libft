@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_converter_string.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 09:49:19 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:12:24 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:37:50 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	converter_string(va_list args, t_list *flags, t_ba *r)
 		arg = (char *)va_arg(args, char *);
 	if (arg == NULL)
 		arg = "(null)";
-	if (!(converted = ft_strdup(arg)))
+	converted = ft_strdup(arg);
+	if (converted == NULL)
 		return ;
 	if (dot != NULL && *dot != -1)
 		converted = format_dot("s", converted, flags);

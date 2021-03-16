@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 13:44:29 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:08:27 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:34:03 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_strnlen(const char *string, size_t size)
 {
-	size_t length;
+	size_t	length;
 
 	length = 0;
 	while (length < size && string[length])
@@ -22,7 +22,7 @@ static size_t	ft_strnlen(const char *string, size_t size)
 	return (length);
 }
 
-size_t			ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	dest_lenght;

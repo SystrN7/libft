@@ -3,38 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 11:34:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:28:46 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:56:27 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *source, char const *set)
 {
 	unsigned long	size;
 	char			*start;
 	char			*stop;
-	char			*str;
+	char			*string;
 
 	size = 0;
-	if (s1 != NULL && set != NULL)
+	if (source != NULL && set != NULL)
 	{
-		start = (char *)s1;
-		stop = (char *)s1;
+		start = (char *)source;
+		stop = (char *)source;
 		while (*stop)
 			stop++;
 		stop--;
 		while (*start && ft_is_in_charset(*start, set))
 			start++;
-		while (s1 <= stop && ft_is_in_charset(*stop, set))
+		while (source <= stop && ft_is_in_charset(*stop, set))
 			stop--;
-		size = (stop - start > 0) ? (stop - start) + 1 : 0;
+		size = (stop - start > 0) * (stop - start) + 1;
 	}
-	if (!(str = ft_managed_malloc(((size + 1) * sizeof(char)))))
+	string = ft_managed_malloc(((size + 1) * sizeof(char)));
+	if (string == NULL)
 		return (NULL);
-	ft_strlcpy(str, start, size + 1);
-	return (str);
+	ft_strlcpy(string, start, size + 1);
+	return (string);
 }

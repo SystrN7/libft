@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmerge_2d.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 13:36:24 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:27:06 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:20:20 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 void	**ft_lstmerge_2d(t_list *list)
 {
 	void	**returned;
-	size_t	first_size;
+	size_t	size;
 	size_t	i;
 	t_list	*it;
 
-	first_size = 0;
-	it = list;
-	while (it)
-	{
-		if (it->content != NULL)
-			first_size++;
-		it = it->next;
-	}
-	if (!(returned = ft_managed_malloc((first_size + 1) * sizeof(void *))))
+	size = ft_lstsize(list);
+	returned = ft_managed_malloc((size + 1) * sizeof(void *));
+	if (returned == NULL)
 		return (NULL);
 	i = 0;
 	it = list;

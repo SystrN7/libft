@@ -6,11 +6,11 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 10:29:55 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/24 14:07:03 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/05 12:34:58 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ('A' <= c && 'Z' >= c)
 		return (c + 32);

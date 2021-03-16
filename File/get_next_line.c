@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:54:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:22:51 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:13:52 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@
 **		-	-1 : If an error occurred during the reading
 */
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static t_list	*fd_list = NULL;
 	t_list			*use_fd;
 	int				return_value;
 
 	use_fd = fd_list;
-	while (use_fd != NULL && use_fd->next &&
-			fd != ((t_open_fd*)use_fd->content)->fd)
+	while (use_fd && use_fd->next && fd != ((t_open_fd*)use_fd->content)->fd)
 		use_fd = use_fd->next;
 	if (use_fd == NULL || ((t_open_fd *)use_fd->content)->fd != fd)
 	{
-		if (!(use_fd = ft_lstnew(ft_managed_malloc(sizeof(t_open_fd)))))
+		use_fd = ft_lstnew(ft_managed_malloc(sizeof(t_open_fd)));
+		if (use_fd == NULL)
 			return (-1);
 		((t_open_fd *)use_fd->content)->fd = fd;
 		((t_open_fd *)use_fd->content)->size = 0;
@@ -46,7 +46,7 @@ int		get_next_line(int fd, char **line)
 		use_fd->next = fd_list;
 		fd_list = use_fd;
 	}
-	if ((return_value = get_next_line_core(use_fd->content, line)) <= 0)
+	if (fti(&return_value, get_next_line_core(use_fd->content, line)) <= 0)
 	{
 		if (((t_open_fd *)use_fd->content)->over != NULL)
 			ft_managed_free(((t_open_fd *)use_fd->content)->over);
@@ -70,7 +70,7 @@ int		get_next_line(int fd, char **line)
 **		-	-1 : If an error occurred during the reading
 */
 
-int		get_next_line_core(t_open_fd *context, char **line)
+int	get_next_line_core(t_open_fd *context, char **line)
 {
 	t_list	*segment_list;
 	char	*buffer;
@@ -80,7 +80,8 @@ int		get_next_line_core(t_open_fd *context, char **line)
 	if (context->fd < 0 || line == NULL)
 		return (-1);
 	segment_list = NULL;
-	if (!(buffer = (char *)ft_managed_malloc((BUFFER_SIZE) * sizeof(char))))
+	buffer = (char *)ft_managed_malloc((BUFFER_SIZE) * sizeof(char));
+	if (buffer == NULL)
 		return (-1);
 	return_value = ft_reads_line(context, buffer, &segment_list);
 	ft_managed_free(buffer);
@@ -93,7 +94,7 @@ int		get_next_line_core(t_open_fd *context, char **line)
 	}
 	ft_lstmerge_segment(segment_list, line);
 	ft_lstclear(&segment_list, ft_lstdel_array_segment);
-	return ((return_value < 0) ? -1 : return_value);
+	return (ft_tern_nu((return_value < 0), -1, return_value));
 }
 
 /*
@@ -112,9 +113,9 @@ int		get_next_line_core(t_open_fd *context, char **line)
 **		-	-2 : An erorr ocurru durring the memory allocation
 */
 
-int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
+int	ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 {
-	ssize_t		readed;
+	int		readed;
 
 	readed = BUFFER_SIZE;
 	if (context->over != NULL)
@@ -130,12 +131,12 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 	}
 	while (readed == BUFFER_SIZE && context->size == 0)
 	{
-		if ((readed = read(context->fd, buffer, BUFFER_SIZE)) < 0)
+		if (fti(&readed, read(context->fd, buffer, BUFFER_SIZE)) < 0)
 			return (-1);
-		if (((context->size = ft_add_line_segment(list, buffer, readed)) < 0))
+		if (fti(&context->size, ft_add_line_segment(list, buffer, readed)) < 0)
 			return (-2);
 		if (context->size != 0)
-			if (!(context->over = ft_memdup(buffer, context->size)))
+			if (!ftn((void **)&context->over, ft_memdup(buffer, context->size)))
 				return (-2);
 	}
 	return ((readed == BUFFER_SIZE) || context->size);
@@ -148,22 +149,23 @@ int		ft_reads_line(t_open_fd *context, char *buffer, t_list **list)
 **		-	(t_list) list: list of segment
 **		-	(char *) str: char readed
 **		-	(size) str_size : the size of readed char;
-**	Return (ssize_t)
+**	Return (int)
 **		-	size : the size of rest (over)
 **		-	-1 : An erorr ocurru durring the memory allocation
 */
 
-ssize_t	ft_add_line_segment(t_list **list, char *str, size_t str_size)
+int	ft_add_line_segment(t_list **list, char *str, int str_size)
 {
-	size_t	y;
-	size_t	size;
+	int		y;
+	int		size;
 	char	*segment;
 
 	y = 0;
 	size = 0;
 	while (size < str_size && str[size] != '\n')
 		size++;
-	if (!(segment = (char *)ft_managed_malloc(size * sizeof(char))))
+	segment = (char *)ft_managed_malloc(size * sizeof(char));
+	if (segment == NULL)
 		return (-1);
 	while (y < str_size)
 	{

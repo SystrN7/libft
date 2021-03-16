@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:48:51 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/30 14:41:05 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 17:18:57 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ ssize_t	ft_format_parser(char *format, va_list args, t_list **converted)
 	{
 		if (format[i] == '%')
 		{
-			if (!(parsed_arg = ft_calloc(1, sizeof(t_format_arg))))
+			parsed_arg = ft_calloc(1, sizeof(t_format_arg));
+			if (parsed_arg == NULL)
 				return (-1);
-			if ((i += ft_format_parse_one(format + i, args, parsed_arg)) < 0)
+			i += ft_format_parse_one(format + i, args, parsed_arg);
+			if (i < 0)
 				return (-1);
 			if (!(ft_lstnew_back(converted, parsed_arg, ft_managed_free)))
 				return (-1);
@@ -45,11 +47,12 @@ ssize_t	ft_format_parse_one(char *start, va_list args, t_format_arg *convert)
 	i = 0;
 	flags = NULL;
 	i += (start[i] == '%');
-	while ((r = ft_format_parse_flag((start + i), args, &flags)) > 0)
+	while (ftn(r, ft_format_parse_flag((start + i), args, &flags)) > 0)
 		i += r;
 	if (r == -1)
 		return (-1);
-	if (!(converted_arg = ft_format_convert(start + i++, args, flags)))
+	converted_arg = ft_format_convert(start + i++, args, flags);
+	if (converted_arg == NULL)
 		return (-1);
 	if (converted_arg->array == NULL)
 		return (-1);
@@ -78,7 +81,7 @@ ssize_t	ft_format_parse_flag(char *start, va_list args, t_list **flags)
 	if (value == NULL && cursor == start)
 	{
 		value = flag_pars_star(&cursor, args, flags);
-		flag = (value) ? "*" : flag;
+		flag = ft_tern_pt(value != NULL, "*", flag);
 	}
 	if (cursor != start && value != NULL)
 		if (!ft_lst_associative_set(flags, flag, value))
@@ -94,7 +97,8 @@ t_ba	*ft_format_convert(char *start, va_list args, t_list *flags)
 	t_bytes_array		*segment;
 
 	converters = ft_modular_converter();
-	if (!(segment = ft_managed_malloc(sizeof(t_bytes_array))))
+	segment = ft_managed_malloc(sizeof(t_bytes_array));
+	if (segment == NULL)
 		return (NULL);
 	segment->size = 0;
 	segment->array = NULL;

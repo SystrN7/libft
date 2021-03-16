@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:15:28 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/26 11:24:26 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 16:58:42 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ void	*ft_managed_malloc(size_t size)
 
 	lst_malloc = ft_managed_get_malloc_list();
 	ptr = malloc(size);
-	if (ptr == NULL || !(link = malloc(sizeof(t_list))))
+	link = malloc(sizeof(t_list));
+	if (ptr == NULL || link == NULL)
 	{
-		if ((termination_function = ft_managed_termination_function(NULL)))
-			termination_function(NULL);
+		termination_function = ft_managed_termination_function(NULL);
+		if (termination_function)
+			termination_function(ft_managed_termination_params(
+					ft_managed_termination_params(NULL)));
 		ft_managed_free_all();
 		return (NULL);
 	}

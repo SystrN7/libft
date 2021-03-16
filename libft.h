@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/11 16:20:08 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/03/16 15:18:57 by felix            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@
 
 # include "ft_format.h"
 # include "ft_format_type.h"
+
+/*
+** =============================================================================
+**									 NORME
+** =============================================================================
+*/
+
+void	*ftn(void **dest, void *src);
+int		fti(int *dest, int src);
+void	*ft_tern_pt(t_bool condition, void *value1, void *value2);
+int		ft_tern_nu(t_bool condition, int value1, int value2);
 
 /*
 ** =============================================================================
@@ -126,7 +137,7 @@ char	*ft_file_get_extention(char *file_name);
 int		get_next_line(int fd, char **line);
 int		get_next_line_core(t_open_fd *context, char **line);
 int		ft_reads_line(t_open_fd *context, char *buff, t_list **lst);
-ssize_t	ft_add_line_segment(t_list **list, char *str, size_t str_size);
+int		ft_add_line_segment(t_list **list, char *str, int str_size);
 
 /*
 ** =============================================================================
@@ -199,7 +210,7 @@ void	ft_lst_associative_del_free(void *to_del);
 ** -----------------------------------------------------------------------------
 */
 
-t_bnode		*ft_binarytree_node_create(void *value);
+t_bnode	*ft_binarytree_node_create(void *value);
 
 /*
 ** -----------------------------------------------------------------------------
@@ -207,8 +218,8 @@ t_bnode		*ft_binarytree_node_create(void *value);
 ** -----------------------------------------------------------------------------
 */
 
-t_list	*ft_lstadd_array_segment(t_list **segments, size_t size, char *array);
-ssize_t	ft_lstmerge_segment(t_list *segment_list, char **str);
+t_list	*ft_lstadd_array_segment(t_list **segments, int size, char *array);
+int		ft_lstmerge_segment(t_list *segment_list, char **str);
 void	ft_lstdel_array_segment(void *to_del);
 
 #endif
