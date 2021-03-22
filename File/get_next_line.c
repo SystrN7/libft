@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 14:54:57 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 17:13:52 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 15:42:49 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	get_next_line(int fd, char **line)
 	int				return_value;
 
 	use_fd = fd_list;
-	while (use_fd && use_fd->next && fd != ((t_open_fd*)use_fd->content)->fd)
+	while (use_fd && use_fd->next && fd != ((t_open_fd *)use_fd->content)->fd)
 		use_fd = use_fd->next;
 	if (use_fd == NULL || ((t_open_fd *)use_fd->content)->fd != fd)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 11:14:21 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 15:21:32 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/03/21 15:42:13 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int	ft_format_formater(char *format, t_list *args, t_list **segments)
 		segment = NULL;
 		if (*cursor == '%')
 		{
-			if (((t_format_arg*)args->content)->converted != NULL)
-				segment = ((t_format_arg*)args->content)->converted;
+			if (((t_format_arg *)args->content)->converted != NULL)
+				segment = ((t_format_arg *)args->content)->converted;
 			else
 				return (FORMATER_ERROR_ARG_FORMAT);
-			cursor += ((t_format_arg*)args->content)->parsed_size;
+			cursor += ((t_format_arg *)args->content)->parsed_size;
 			args = args->next;
 		}
 		else if (!ftn((void **)&segment, ft_format_inter_args(cursor)))
