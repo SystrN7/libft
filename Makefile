@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/03/16 11:34:40 by felix            ###   ########lyon.fr    #
+#    Updated: 2021/04/17 13:23:17 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ LIB_SRCS	=	Norme/ft_ternary.c \
 				String/ft_strchr.c \
 				String/ft_strrchr.c \
 				String/ft_strncmp.c \
+				String/ft_stricmp.c \
 				String/ft_strnstr.c \
 				String/ft_strlcpy.c \
 				String/ft_strlcat.c \
