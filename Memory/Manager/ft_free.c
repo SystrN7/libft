@@ -6,11 +6,13 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:32:01 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/19 10:03:55 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 15:24:05 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#ifndef DEBUG
 
 static void	ft_managed_remove_link(
 	t_list **list,
@@ -95,3 +97,5 @@ void	ft_managed_free_all(void)
 	}
 	*lst_malloc = NULL;
 }
+
+#endif

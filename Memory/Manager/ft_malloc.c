@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:15:28 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 16:58:42 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 15:24:07 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+#ifndef DEBUG
 
 /*
 ** Function : ft_malloc
@@ -50,3 +52,5 @@ void	*ft_managed_malloc(size_t size)
 	ft_lstadd_front(lst_malloc, link);
 	return (ptr);
 }
+
+#endif

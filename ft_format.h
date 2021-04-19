@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/03 14:58:32 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 18:25:28 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 11:04:15 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 # include "libft.h"
 # include "ft_format_type.h"
-
-# define DEBUG TRUE
 
 # define PARSER_ERROR -20
 # define PARSER_MALLOC_ARG 1

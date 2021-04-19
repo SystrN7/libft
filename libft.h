@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/17 13:23:34 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 15:23:08 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@
 
 # include "ft_format.h"
 # include "ft_format_type.h"
+
+# define DEBUG
+
+# ifdef DEBUG
+#  include "Memory/Manager/Debug/ft_managed_debug.h"
+# endif
 
 /*
 ** =============================================================================
@@ -53,10 +59,19 @@ void	ft_nothing(void *address);
 void	ft_2d_free(void **address);
 size_t	ft_2d_count(void **array);
 
+/*
+** -----------------------------------------------------------------------------
+**							  	  Managed Alloc
+** -----------------------------------------------------------------------------
+*/
+
+# ifndef DEBUG
 t_list	**ft_managed_get_malloc_list(void);
 void	*ft_managed_malloc(size_t size);
 void	ft_managed_free(void *ptr);
 void	ft_managed_free_all(void);
+# endif
+
 t_term	ft_managed_termination_function(t_ftermination f);
 void	*ft_managed_termination_params(void *params);
 
