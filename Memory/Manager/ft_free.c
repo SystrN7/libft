@@ -6,11 +6,42 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:32:01 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/02/01 14:11:25 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 10:03:55 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	ft_managed_remove_link(
+	t_list **list,
+	t_list *link_del
+)
+{
+	t_list	*list_it;
+	t_list	*link_befor_del;
+
+	if (list == NULL || *list == NULL || link_del == NULL)
+		return ;
+	list_it = *list;
+	link_befor_del = NULL;
+	while (list_it != link_del)
+	{
+		link_befor_del = list_it;
+		list_it = list_it->next;
+	}
+	if (list_it == link_del)
+	{
+		if (*list == list_it)
+			*list = (*list)->next;
+		if (list_it->next != NULL && link_befor_del != NULL)
+			link_befor_del->next = list_it->next;
+		else if (link_befor_del != NULL)
+			link_befor_del->next = NULL;
+		free(link_del->content);
+		free(link_del);
+		link_del = NULL;
+	}
+}
 
 /*
 ** Function : ft_managed_free
@@ -37,7 +68,7 @@ void	ft_managed_free(void *ptr)
 		it = it->next;
 	}
 	if (it != NULL)
-		ft_lstremove_link(lst_malloc, it, free);
+		ft_managed_remove_link(lst_malloc, it);
 }
 
 /*
