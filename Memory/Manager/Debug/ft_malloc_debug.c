@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:17 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/19 15:32:26 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/19 15:34:42 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	ft_debug_show_unfree(void)
 	while (it)
 	{
 		printf(
-			"\t - Unfree Momory of [%p] - %4i bytes : @%-30s:line:%-5d - %s\n",
+			"\t - Unfree Memory of [%p] - %4i bytes : @%-30s:line:%-5d - %s\n",
 			it->address,
 			it->size,
 			it->function,
