@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/04/19 15:19:40 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/04/20 13:55:48 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,17 @@ LIB_SRCS	=	Norme/ft_ternary.c \
 				List/BytesArray/ft_lstadd_array_segment.c \
 				List/BytesArray/ft_lstmerge_segment.c \
 				List/BytesArray/ft_lstdel_array_segment.c \
+				List/Bidirectional/ft_blst_first.c \
+				List/Bidirectional/ft_blst_last.c \
+				List/Bidirectional/ft_blst_add_front.c \
+				List/Bidirectional/ft_blst_add_back.c \
+				List/Bidirectional/ft_blst_insert_link.c \
+				List/Bidirectional/ft_blst_new.c \
+				List/Bidirectional/ft_blst_new_front.c \
+				List/Bidirectional/ft_blst_new_back.c \
+				List/Bidirectional/ft_blst_delete_link.c \
+				List/Bidirectional/ft_blst_remove_link.c \
+				List/Bidirectional/ft_blst_clear.c \
 				List/Associative/ft_lst_associative_set.c \
 				List/Associative/ft_lst_associative_get.c \
 				List/Associative/ft_lst_get_associative.c \

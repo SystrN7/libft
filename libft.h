@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/19 15:23:08 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 13:58:01 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,6 +227,27 @@ void	ft_lst_associative_del_free(void *to_del);
 */
 
 t_bnode	*ft_binarytree_node_create(void *value);
+
+/*
+** -----------------------------------------------------------------------------
+**							  	  bidirectional
+** -----------------------------------------------------------------------------
+*/
+
+t_blst	ft_blst_first(t_bidirectional_list *list);
+t_blst	ft_blst_last(t_bidirectional_list *list);
+
+t_blst	ft_blst_add_front(t_bidirectional_list **list, t_blst link);
+t_blst	ft_blst_add_back(t_bidirectional_list **list, t_blst link);
+t_blst	ft_blst_insert_link(t_bidirectional_list **list, t_blst link);
+
+t_blst	ft_blst_new(void *content);
+t_blst	ft_blst_new_back(t_blst *list, void *content, void (*del)(void *));
+t_blst	ft_blst_new_front(t_blst *list, void *content, void (*del)(void *));
+
+void	ft_blst_delete_link(t_bidirectional_list *link, void (*del)(void*));
+void	ft_blst_remove_link(t_blst *list, t_blst link, void (*del)(void*));
+void	ft_blst_clear(t_bidirectional_list **list, void (*del)(void*));
 
 /*
 ** -----------------------------------------------------------------------------

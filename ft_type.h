@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_type.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 12:31:29 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 13:16:51 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,24 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }							t_list;
+
+/*
+** Type Name: s_bidirectional_list
+** Description : This structure type store link of double chained list.
+** Vars :
+**	-	(void*) content : The value of to store in the link of list.
+** 	-	(s_list*) next : The address of next element of the list.
+** 	-	(s_bidirectional_list*) prev : The address of prev element of the list.
+*/
+
+typedef struct s_bidirectional_list
+{
+	void							*content;
+	struct s_bidirectional_list		*next;
+	struct s_bidirectional_list		*prev;
+}				t_bidirectional_list;
+
+typedef t_bidirectional_list*t_blst;
 
 /*
 ** Type Name: t_bytes_array
