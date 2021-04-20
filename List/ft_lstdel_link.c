@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:59:10 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/01/25 10:30:36 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/20 12:01:36 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdel_link(t_list *link, void (*del)(void*))
 {
-	if (link == NULL || link->content == NULL)
+	if (link == NULL)
 		return ;
 	if (del != NULL)
 		del(link->content);
