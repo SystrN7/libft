@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/20 13:16:51 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:26:00 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ enum						e_standard_file_descriptor
 
 enum						e_boolean
 {
-	FALSE = 0,
-	TRUE
+	FT_FALSE = 0,
+	FT_TRUE
 };
 typedef char				t_boolean;
 typedef t_boolean			t_bool;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_less.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/17 11:25:50 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 17:42:20 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:25:55 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*flag_pars_less(char **start, t_list **flags)
 		value = ft_managed_malloc(sizeof(t_boolean));
 		if (value == NULL)
 			return (NULL);
-		*value = TRUE;
+		*value = FT_TRUE;
 	}
 	return (value);
 }

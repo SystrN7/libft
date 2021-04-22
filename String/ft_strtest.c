@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 12:03:28 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/08 13:55:19 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:25:45 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_bool	ft_strtest(const char *string, int (*f)(int))
 
 	i = 0;
 	if (string == NULL)
-		return (FALSE);
+		return (FT_FALSE);
 	while (string[i])
 	{
-		if (f(string[i]) == FALSE)
-			return (FALSE);
+		if (f(string[i]) == FT_FALSE)
+			return (FT_FALSE);
 		i++;
 	}
-	return (TRUE);
+	return (FT_TRUE);
 }

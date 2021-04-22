@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_star.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: felix <felix@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 14:23:24 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/03/16 17:43:19 by felix            ###   ########lyon.fr   */
+/*   Updated: 2021/04/22 17:25:47 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ int	format_star(va_list args, t_list **flags, int affected)
 	if (value < 0)
 	{
 		if (affected == FLAG_STAR_DOT)
-			return (ft_set_fs(flags, size, 1, FALSE));
+			return (ft_set_fs(flags, size, 1, FT_FALSE));
 		else
-			return (ft_set_fs(flags, size, 0, TRUE));
+			return (ft_set_fs(flags, size, 0, FT_TRUE));
 	}
 	else
 	{
