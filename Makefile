@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/04/22 17:25:32 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/04/27 15:54:16 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ LIB_SRCS	=	Norme/ft_ternary.c \
 				Memory/Manager/ft_manager.c \
 				Memory/Manager/ft_malloc.c \
 				Memory/Manager/ft_free.c \
-				Memory/Manager/Debug/ft_malloc_debug.c \
 				Math/ft_count_digits.c \
 				Math/ft_absolute.c \
 				Math/ft_angle.c \

@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/20 13:58:01 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/04/26 17:33:39 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 # include "ft_format.h"
 # include "ft_format_type.h"
 
-# define DEBUG
-
 # ifdef DEBUG
 #  include "Memory/Manager/Debug/ft_managed_debug.h"
+#  include "Memory/Manager/Debug/ft_managed_debug.c"
 # endif
 
 /*
