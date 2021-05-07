@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 16:30:05 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/22 17:26:00 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/06 17:29:22 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,5 +221,23 @@ typedef struct s_open_fd
 	int			size;
 	char		*over;
 }							t_open_fd;
+
+/*
+** Enum Name: e_type
+** Description : This Enum contain standard var size is
+**	used by overflow evaluator.
+** Possible Value :
+**	-	number_8 : Identifer for number of size 8 bits
+**	-	number_16 : Identifer for number of size 16 bits
+**	-	number_32 : Identifer for number of size 32 bits
+**	-	...
+*/
+enum e_type
+{
+	number_8,
+	number_16,
+	number_32,
+	number_64
+};
 
 #endif

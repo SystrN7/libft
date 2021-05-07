@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/04/27 15:54:16 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/05/07 14:04:47 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,10 @@ LIB_SRCS	=	Norme/ft_ternary.c \
 				Type/ft_isalnum.c \
 				Type/ft_isprint.c \
 				Type/ft_isascii.c \
+				Type/Overflow/ft_overflow_utils.c \
+				Type/Overflow/ft_overflow_addition.c \
+				Type/Overflow/ft_overflow_subtraction.c \
+				Type/Overflow/ft_overflow_multiplication.c \
 				Type/Convert/ft_atoi.c \
 				Type/Convert/ft_strtoll.c \
 				Type/Convert/ft_itoa.c \

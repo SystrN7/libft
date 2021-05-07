@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/26 17:33:39 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/07 13:59:05 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,27 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		ft_isascii(int c);
+
+/*
+** -----------------------------------------------------------------------------
+**							  	  Overflow
+** -----------------------------------------------------------------------------
+*/
+
+int64_t	ft_overflow_get_min(int type);
+int64_t	ft_overflow_get_max(int type);
+
+t_bool	ft_badflow_addition(long long a, long long b, int type);
+t_bool	ft_overflow_addition(long long a, long long b, int type);
+t_bool	ft_underflow_addition(long long a, long long b, int type);
+
+t_bool	ft_badflow_subtraction(long long a, long long b, int type);
+t_bool	ft_overflow_subtraction(long long a, long long b, int type);
+t_bool	ft_underflow_subtraction(long long a, long long b, int type);
+
+t_bool	ft_badflow_multiplication(long long a, long long b, int type);
+t_bool	ft_overflow_multiplication(long long a, long long b, int type);
+t_bool	ft_underflow_multiplication(long long a, long long b, int type);
 
 /*
 ** -----------------------------------------------------------------------------
