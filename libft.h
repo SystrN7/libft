@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/05/10 10:59:48 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/10 11:02:31 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ t_bool	ft_underflow_multiplication(long long a, long long b, int type);
 */
 
 int		ft_atoi(const char *str);
-size_t	ft_strtoll(char *str, long long *number);
+size_t	ft_strtoll(const char *str, long long *number);
 char	*ft_itoa(int n);
 char	*ft_lltostr(long long number);
 char	*ft_ulltostr(unsigned long long number);
