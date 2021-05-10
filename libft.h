@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/05/07 13:59:05 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/10 10:59:48 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,6 +264,9 @@ t_blst	ft_blst_insert_link(t_bidirectional_list **list, t_blst link);
 t_blst	ft_blst_new(void *content);
 t_blst	ft_blst_new_back(t_blst *list, void *content, void (*del)(void *));
 t_blst	ft_blst_new_front(t_blst *list, void *content, void (*del)(void *));
+
+void	ft_blst_swap(t_bidirectional_list *lnk_a, t_bidirectional_list *lnk_b);
+void	ft_blst_move_before(t_blst *link, t_blst *dest_list);
 
 void	ft_blst_delete_link(t_bidirectional_list *link, void (*del)(void*));
 void	ft_blst_remove_link(t_blst *list, t_blst link, void (*del)(void*));

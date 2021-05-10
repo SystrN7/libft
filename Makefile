@@ -6,7 +6,7 @@
 #    By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 14:30:58 by fgalaup           #+#    #+#              #
-#    Updated: 2021/05/07 14:04:47 by fgalaup          ###   ########lyon.fr    #
+#    Updated: 2021/05/07 15:01:21 by fgalaup          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,8 @@ LIB_SRCS	=	Norme/ft_ternary.c \
 				List/Bidirectional/ft_blst_new.c \
 				List/Bidirectional/ft_blst_new_front.c \
 				List/Bidirectional/ft_blst_new_back.c \
+				List/Bidirectional/ft_blst_move.c \
+				List/Bidirectional/ft_blst_swap.c \
 				List/Bidirectional/ft_blst_delete_link.c \
 				List/Bidirectional/ft_blst_remove_link.c \
 				List/Bidirectional/ft_blst_clear.c \
