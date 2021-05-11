@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 12:22:07 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/04/20 13:45:34 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 12:54:28 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ t_blst	ft_blst_insert_link(
 		return (*list = link);
 	link->next = (*list)->next;
 	link->prev = (*list);
-	(*list)->next->prev = link;
+	if ((*list)->next != NULL)
+		(*list)->next->prev = link;
 	(*list)->next = link;
 	(*list) = link;
 	return (link);
