@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 16:16:00 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/05/10 11:02:31 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 14:57:47 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,7 +259,8 @@ t_blst	ft_blst_last(t_bidirectional_list *list);
 
 t_blst	ft_blst_add_front(t_bidirectional_list **list, t_blst link);
 t_blst	ft_blst_add_back(t_bidirectional_list **list, t_blst link);
-t_blst	ft_blst_insert_link(t_bidirectional_list **list, t_blst link);
+t_blst	ft_blst_insert_link_before(t_bidirectional_list **list, t_blst link);
+t_blst	ft_blst_insert_link_after(t_bidirectional_list **list, t_blst link);
 
 t_blst	ft_blst_new(void *content);
 t_blst	ft_blst_new_back(t_blst *list, void *content, void (*del)(void *));

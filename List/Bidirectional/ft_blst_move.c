@@ -6,7 +6,7 @@
 /*   By: fgalaup <fgalaup@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 14:21:47 by fgalaup           #+#    #+#             */
-/*   Updated: 2021/05/07 15:30:03 by fgalaup          ###   ########lyon.fr   */
+/*   Updated: 2021/05/11 14:57:08 by fgalaup          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	ft_blst_move_before(
 		*link = NULL;
 	link_to_move->next = NULL;
 	link_to_move->prev = NULL;
-	ft_blst_insert_link(dest_list, link_to_move);
+	ft_blst_insert_link_before(dest_list, link_to_move);
 }
